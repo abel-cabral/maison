@@ -52,7 +52,7 @@ $userdeslogado = userdeslogado();
                                             </td>
                                             <td>
                                                 <a href="./editar.php?idgerente=<?php echo $msg_login['idgerente']; ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
-                                                <a href="./editar.php"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>                                                
+                                                <a href="./php/insert.php?idgerente=<?php echo $msg_login['idgerente']; ?>&exclua=exclua"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>                                                
                                             </td>
                                         </tr>
                                         <?php endwhile; ?>

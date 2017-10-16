@@ -8,6 +8,11 @@ $userdeslogado = userdeslogado();
 //chama as configurações com o banco de dados
 @require_once("./php/config.php");
 
+//Com esse if apenas  id 29 maison podera fazer qualquel alteração/inclusao no banco
+if($_SESSION['user_id'] != 29){
+    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";    
+    header ("location: ./index.php");     
+}
 
 
   // pega o ID da URL

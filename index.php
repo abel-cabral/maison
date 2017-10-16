@@ -7,7 +7,6 @@
     $userdeslogado = userdeslogado();
     
     //MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
-    echo @$_SESSION['autorizacao'];
     echo @$_SESSION['mensagemStatus'];
     unset($_SESSION['mensagemStatus']);
 ?>
