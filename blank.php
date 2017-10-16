@@ -6,7 +6,9 @@ $userdeslogado = userdeslogado();
 @require_once("./php/header.php");
 
 //Local onde está a PDO que puxa do banco de dados
+//A variavel recebe o valor do return da function assim posso trabalhar tanto a tabela usuarios quanto a img
 @require_once("./php/verDados.php");
+$exibirNomes = exibirNomes();
 
 
 ?>
@@ -39,7 +41,7 @@ $userdeslogado = userdeslogado();
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php while ($msg_login = $resultado_msg->fetch(PDO::FETCH_ASSOC)): ?>
+                                    <?php while ($msg_login = $exibirNomes->fetch(PDO::FETCH_ASSOC)): ?>
                                         <tr>
                                             <td>
                                                 <?php echo $msg_login['idgerente']; ?>

@@ -27,14 +27,14 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Components</span>
+                    <span class="nav-link-text">MaisonChic.com.br</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="navbar.php">Navbar</a>
+                        <a href="./beta.php">Fotos</a>
                     </li>
                     <li>
-                        <a href="cards.php">Cards</a>
+                        <a href="#">Contatos</a>
                     </li>
                 </ul>
             </li>
