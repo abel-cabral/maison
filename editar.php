@@ -33,7 +33,7 @@ if(!is_array($resultado_msg_contato)){
     exit;	
 }
 ?>
-    
+
 
 
     <body class="bg-dark">
@@ -42,7 +42,7 @@ if(!is_array($resultado_msg_contato)){
                 <div class="card-header">Editar Registro de Administradores</div>
                 <div class="card-body">
 
-                    <form action="./php/insert.php" method="get">
+                    <form action="./php/insert.php" method="post">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-md-6">
@@ -64,13 +64,15 @@ if(!is_array($resultado_msg_contato)){
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleConfirmPassword">Confirmar Senha</label>
-                                    <input class="form-control" id="senha2" type="password"  value="<?php echo $resultado_msg_contato['senha'];?>" required>
-                                    
+                                    <input class="form-control" id="senha2" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+
                                 </div>
                             </div>
                         </div>
                         <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php echo $resultado_msg_contato['idgerente'];?>">
-                        <a><input class="btn btn-primary btn-block danger" type="submit" value="Atualizar"></a>
+                        <a>
+                            <input class="btn btn-primary btn-block danger" name="atualize" value="atualize" type="submit" value="Atualizar">
+                        </a>
                     </form>
 
                     <!-- <div class="text-center">

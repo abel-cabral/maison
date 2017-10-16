@@ -7,9 +7,8 @@ $userdeslogado = userdeslogado();
 //Verifica se o 
 
 if($_SESSION['user_id'] != 29){
-    $_SESSION['autorizacao'] = "<script>alert('Você não possui privilégios para executar esta ação.');</script>";    
-    header ("location: ./index.php"); 
-    
+    $_SESSION['mensagemStatus'] = "<script>alert('Você não possui privilégios para executar esta ação.');</script>";    
+    header ("location: ./index.php");     
 }
 ?>
 
@@ -44,14 +43,9 @@ if($_SESSION['user_id'] != 29){
                                     <input class="form-control" type="password" placeholder="Repetir Senha" required>
                                 </div>
                             </div>
-                        </div>
-                        <button class="btn btn-primary btn-block" type="submit">Efetuar Cadastro</button>
-                    </form>
-                    <?php
-                        if($_SERVER['REQUEST_METHOD']=='POST'){
-                                cadastro();
-                            } 
-        ?>
+                        </div>                        
+                        <button class="btn btn-primary btn-block" name="cadastre" value="cadastre" type="submit">Efetuar Cadastro</button>
+                    </form>                
 
                         <!-- <div class="text-center">
                     <a class="d-block small mt-3" href="login.php">Login Page</a>
