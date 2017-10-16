@@ -13,7 +13,7 @@ $userdeslogado = userdeslogado();
 
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         <!--Aqui incluimos os nosso Menu de navegação-->
-        <?php @require_once ('./php/menuNav.php');?>
+        <?php @require_once ('./php/estrutura/menuNav.php');?>
 
             <div class="content-wrapper">
                 <div class="container-fluid">
@@ -24,8 +24,8 @@ $userdeslogado = userdeslogado();
                         </li>
                         <li class="breadcrumb-item active">Administradores</li>
                     </ol>
-                    
-                    
+
+
                     <!--Aqui eu criei uma tabela em bootstrap que faz o while do array e joga os dados nas colunas abaixo descritas-->
                     <div class="row">
                         <div class="col-md-12">
@@ -52,7 +52,7 @@ $userdeslogado = userdeslogado();
                                             </td>
                                             <td>
                                                 <a href="./editar.php?idgerente=<?php echo $msg_login['idgerente']; ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
-                                                <a href="./php/insert.php?idgerente=<?php echo $msg_login['idgerente']; ?>&exclua=exclua"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>                                                
+                                                <a href="./php/insert.php?idgerente=<?php echo $msg_login['idgerente']; ?>&exclua=exclua"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                         <?php endwhile; ?>
@@ -91,6 +91,6 @@ $userdeslogado = userdeslogado();
                         <!-- Custom scripts for all pages-->
                         <script src="js/sb-admin.min.js"></script>
                 </div>
-    </body>
+                </body></body>
 
     </html>

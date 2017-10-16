@@ -8,7 +8,7 @@ $userdeslogado = userdeslogado();
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!--Aqui incluimos os nosso Menu de navegação-->
-    <?php @require_once ('./php/menuNav.php');?>
+    <?php @require_once ('./php/estrutura/menuNav.php');?>
 
     <div class="content-wrapper">
         <div class="container-fluid">
