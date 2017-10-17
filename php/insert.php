@@ -8,9 +8,12 @@ session_start();
     // Estava com problemas para unificar essas funções, assim como solução peguei todas e coloquei em um lugar só e usando if e elseif consigui organizar.
     @$cadastre = $_POST['cadastre'];
     @$atualize = $_POST['atualize'];
+    @$atualizeSeu = $_POST['atualizeSeu'];
     @$exclua = $_GET['exclua'];
     @$atualizeImg = $_POST['atualizeImg'];
     @$atualizeTxt = $_POST['atualizeTxt'];
+       
+
 
     //Essas variaveis recebem o valor dos campos do fomulario, usando seu name como guia.
     @$login = strtolower($_POST['login']);
@@ -89,6 +92,45 @@ else
         }
 }
     }
+elseif (isset($atualizeSeu))
+    {
+        if ($_SESSION['user_id'] != $_SESSION['user_id'])
+{
+    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
+    header("location: ../index.php");
+}
+else
+{
+
+        //Essa Variavel só existem em atualização ou exclusão.
+        $idgerente = $_POST["idgerente"];
+
+        //Com essa variavel informo o que quero buscar no banco de dados
+        $sql_msg_contatos = "UPDATE gerente SET login = :login, adm = :adm, senha = :senha WHERE idgerente = :idgerente";
+        //Aqui de fato eu conecto e verifico se elas existem
+        $insert_msg_contato = $pdo->prepare($sql_msg_contatos);
+
+        //Aqui eu mostro de que variavel vem as informações do php e para onde vao no sql
+        $insert_msg_contato->bindParam(':login', $login);
+        $insert_msg_contato->bindParam(':adm', $adm);
+        $insert_msg_contato->bindParam(':senha', $senha);
+        $insert_msg_contato->bindParam(':idgerente', $idgerente, PDO::PARAM_INT);
+
+        //basicamente aqui eu faço o ->execute() que de fato realiza a operação
+        if ($insert_msg_contato->execute())
+        {
+
+            $_SESSION['mensagemStatus'] = "<script>alert('Cadastro Atualizado');</script>";
+            header("Location: ../index.php");
+        }
+        else
+        {
+            echo "Erro ao cadastrar";
+            $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
+            header("Location: ../register.php");
+        }
+}
+    }
     elseif (isset($exclua))
     {
         if ($_SESSION['user_id'] != 29)
@@ -112,13 +154,13 @@ else
         {
 
             $_SESSION['mensagemStatus'] = "<script>alert('Deletado Com Sucesso');</script>";
-            header("Location: ../index.php");
+            header("Location: ../verAdm.php");
         }
         else
         {
             echo "Erro ao cadastrar";
             $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
-            header("Location: ../index.php");
+            header("Location: ../verAdm.php");
         }
 }
 

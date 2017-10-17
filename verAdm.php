@@ -5,6 +5,10 @@ $userdeslogado = userdeslogado();
 //Inclui que inseri a nossa header do html
 @require_once("./php/header.php");
 
+//MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
+    echo @$_SESSION['mensagemStatus'];
+    unset($_SESSION['mensagemStatus']);
+
 //Local onde está a PDO que puxa do banco de dados
 //A variavel recebe o valor do return da function assim posso trabalhar tanto a tabela usuarios quanto a img
 @require_once("./php/verDados.php");

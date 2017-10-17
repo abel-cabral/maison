@@ -76,7 +76,7 @@ if(!is_array($resultado_msg_contato)){
                         </div>
                         <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php echo $resultado_msg_contato['idgerente'];?>">
                         <a>
-                            <input class="btn btn-primary btn-block danger" name="atualize" value="atualize" type="submit" value="Atualizar">
+                            <input class="btn btn-primary btn-block danger" name="atualize" type="submit" value="Atualizar">
                         </a>
                     </form>
 
