@@ -21,7 +21,7 @@ while($msg_login = $exibirImg->fetch(PDO::FETCH_ASSOC)):
     $maedesanto[] = $msg_login['url'];
 endwhile;
 
-
+//Numero do Array começa a contar em 0, mas numero da linha na tabela começa em 1, então o arquivo no array 0 deve ter value 1:
 ?>
 
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">

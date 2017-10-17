@@ -2,10 +2,10 @@
 
 function conectar(){
 try{
-    $host = 'lgg2gx1ha7yp2w0k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    $host = '127.0.0.1';
     $dbname = 'maison';
-    $username = 'pvyia7kons2d8a3u';
-    $password = 'thp7b58xbqnorg11';
+    $username = 'root';
+    $password = '';
     $charset = 'utf8';
     $collate = 'utf8_unicode_ci';
     $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";

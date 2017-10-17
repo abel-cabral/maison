@@ -10,6 +10,7 @@ session_start();
     @$atualize = $_POST['atualize'];
     @$exclua = $_GET['exclua'];
     @$atualizeImg = $_POST['atualizeImg'];
+    @$atualizeTxt = $_POST['atualizeTxt'];
 
     //Essas variaveis recebem o valor dos campos do fomulario, usando seu name como guia.
     @$login = strtolower($_POST['login']);
@@ -151,6 +152,34 @@ else
             header("Location: ../fotos.php");
         }
        
-   } 
+   }
+    elseif(isset($atualizeTxt)){
+        //Essas Variaveis aqui recebem o URL e ID das imagens
+       $idtxt = $_POST['idtxt'];
+       $txt = $_POST['txt'];           
+       
+        //Com essa variavel informo o que quero buscar no banco de dados
+        $sql_msg_contatos = "UPDATE txt SET txt = :txt WHERE idtxt = :idtxt";
+        //Aqui de fato eu conecto e verifico se elas existem
+        $insert_msg_contato = $pdo->prepare($sql_msg_contatos);
+
+        //Aqui eu mostro de que variavel vem as informações do php e para onde vao no sql
+        $insert_msg_contato->bindParam(':txt', $txt);        
+        $insert_msg_contato->bindParam(':idtxt', $idtxt, PDO::PARAM_INT);
+
+        //basicamente aqui eu faço o ->execute() que de fato realiza a operação
+        if ($insert_msg_contato->execute())
+        {
+
+            $_SESSION['mensagemStatus'] = "<script>alert('Atualizado com Sucesso!');</script>";
+            header("Location: ../textos.php");
+        }
+        else
+        {
+            echo "Erro ao cadastrar";
+            $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
+            header("Location: ../textos.php");
+        }
+    }
 
 ?>

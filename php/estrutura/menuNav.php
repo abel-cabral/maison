@@ -9,7 +9,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="index.php">
                     <i class="fa fa-fw fa-dashboard"></i>
-                    <span class="nav-link-text">Dashboard</span>
+                    <span class="nav-link-text">Visão Geral</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
@@ -34,7 +34,7 @@
                         <a href="./fotos.php">Atualizar Fotos</a>
                     </li>
                     <li>
-                        <a href="#">Atualizar Textos</a>
+                        <a href="./textos.php">Atualizar Textos</a>
                     </li>
                 </ul>
             </li>
@@ -48,10 +48,10 @@
                         <a href="register.php">Cadastrar Administradores</a>
                     </li>
                     <li>
-                        <a href="forgot-password.php">Forgot Password Page</a>
+                        <a href="forgot-password.php">Alterar Meus Dados</a>
                     </li>
                     <li>
-                        <a href="blank.php">Listar Administradores do Site</a>
+                        <a href="blank.php">Ver Administradores do Site</a>
                     </li>
                 </ul>
             </li>
