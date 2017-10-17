@@ -1,13 +1,6 @@
 <?php
 session_start();
 //Com esse if apenas  id 29 maison podera fazer qualquel alteração/inclusao no banco
-if ($_SESSION['user_id'] != 29)
-{
-    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
-    header("location: ../index.php");
-}
-else
-{
 
     @require_once ("./config.php");
     $pdo = conectar();
@@ -16,14 +9,24 @@ else
     @$cadastre = $_POST['cadastre'];
     @$atualize = $_POST['atualize'];
     @$exclua = $_GET['exclua'];
+    @$atualizeImg = $_POST['atualizeImg'];
 
     //Essas variaveis recebem o valor dos campos do fomulario, usando seu name como guia.
     @$login = strtolower($_POST['login']);
     @$senha = crypt($_POST['senha'], "somesalt");
     @$adm = ucwords($_POST['adm']);
-
+    
+    
     if (isset($cadastre))
     {
+        if ($_SESSION['user_id'] != 29)
+{
+    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
+    header("location: ../index.php");
+}
+else
+{
+
 
         // Prepara o SQL e seus paramentros
         $stmt = $pdo->prepare("INSERT INTO gerente(login, adm, senha) VALUES(:login, :adm, :senha)");
@@ -44,9 +47,18 @@ else
             $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
             header("Location: ../register.php");
         }
+}
     }
     elseif (isset($atualize))
     {
+        if ($_SESSION['user_id'] != 29)
+{
+    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
+    header("location: ../index.php");
+}
+else
+{
+
         //Essa Variavel só existem em atualização ou exclusão.
         $idgerente = $_POST["idgerente"];
 
@@ -74,10 +86,18 @@ else
             $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
             header("Location: ../register.php");
         }
-
+}
     }
     elseif (isset($exclua))
     {
+        if ($_SESSION['user_id'] != 29)
+{
+    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
+    header("location: ../index.php");
+}
+else
+{
+
         //Essa Variavel só existem em atualização ou exclusão estou a puxando pela barra de navegação
         $idgerente = $_GET["idgerente"];
 
@@ -99,7 +119,38 @@ else
             $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
             header("Location: ../index.php");
         }
+}
 
     }
-}
+   elseif (isset($atualizeImg))
+   {
+       //Essas Variaveis aqui recebem o URL e ID das imagens
+       $idimg = $_POST['idimg'];
+       $url = $_POST['url'];           
+       
+        //Com essa variavel informo o que quero buscar no banco de dados
+        $sql_msg_contatos = "UPDATE img SET url = :url WHERE idimg = :idimg";
+        //Aqui de fato eu conecto e verifico se elas existem
+        $insert_msg_contato = $pdo->prepare($sql_msg_contatos);
+
+        //Aqui eu mostro de que variavel vem as informações do php e para onde vao no sql
+        $insert_msg_contato->bindParam(':url', $url);        
+        $insert_msg_contato->bindParam(':idimg', $idimg, PDO::PARAM_INT);
+
+        //basicamente aqui eu faço o ->execute() que de fato realiza a operação
+        if ($insert_msg_contato->execute())
+        {
+
+            $_SESSION['mensagemStatus'] = "<script>alert('Atualizado com Sucesso!');</script>";
+            header("Location: ../fotos.php");
+        }
+        else
+        {
+            echo "Erro ao cadastrar";
+            $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
+            header("Location: ../fotos.php");
+        }
+       
+   } 
+
 ?>

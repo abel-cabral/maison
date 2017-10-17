@@ -4,6 +4,9 @@
 $userdeslogado = userdeslogado();
 //Inclui que inseri a nossa header do html
 @require_once("./php/header.php");
+//MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
+    echo @$_SESSION['mensagemStatus'];
+    unset($_SESSION['mensagemStatus']);
 
 
 
@@ -40,14 +43,15 @@ endwhile;
                         <!--Primeira Coluna de Fotos Primeira Sessão-->
                         <div class="col-sm-4">
                             <h2>Foto de Capa</h2>
-                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[0]; ?>" alt="Chania" width="460" height="345" border="5px">
-                            <form class="form-horizontal">
+                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[0]; ?>" alt="Chania" width="460" height="345">
+                            <form class="form-horizontal" action="./php/insert.php" method="post">
                                 <fieldset>
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="url"></label>
                                         <div class="col-md-10">
-                                            <input id="url" name="url" placeholder="URL da Imagem" class="form-control input-md" required="" type="text">
+                                            <input name="url" placeholder="URL da Imagem" class="form-control input-md" required="Para Atualizar você deve inserir um Link" type="text">
+                                            <input type="hidden" name="idimg" value="1">
                                             <span class="help-block">Cole aqui sua URL de nova imagem</span>
                                         </div>
                                     </div>
@@ -55,23 +59,26 @@ endwhile;
                                     <!-- Button -->
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Atualizar</button>
+
+                                            <button name="atualizeImg" value="atualizeImg" type="submit" class="btn btn-success" style="cursor:pointer">Atualizar</button>
                                         </div>
                                     </div>
 
                                 </fieldset>
-                            </form>
+                            </form>                            
+                        </div>
 
-                            <!--Primeira Coluna de Fotos Segunda Sessão-->
+                        <div class="col-sm-4">
                             <h2>Foto de Capa</h2>
-                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[2]; ?>" alt="Chania" width="460" height="345" border="5px">
-                            <form class="form-horizontal">
+                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[1]; ?>" alt="Chania" width="460" height="345">
+                            <form class="form-horizontal" action="./php/insert.php" method="post">
                                 <fieldset>
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="url"></label>
                                         <div class="col-md-10">
-                                            <input id="url" name="url" placeholder="URL da Imagem" class="form-control input-md" required="" type="text">
+                                            <input name="url" placeholder="URL da Imagem" class="form-control input-md" required="Para Atualizar você deve inserir um Link" type="text">
+                                            <input type="hidden" name="idimg" value="2">
                                             <span class="help-block">Cole aqui sua URL de nova imagem</span>
                                         </div>
                                     </div>
@@ -79,7 +86,68 @@ endwhile;
                                     <!-- Button -->
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Atualizar</button>
+
+                                            <button name="atualizeImg" value="atualizeImg" type="submit" class="btn btn-success" style="cursor:pointer">Atualizar</button>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>                            
+                        </div>
+
+                        <div class="col-sm-4">
+                            <h2>Foto de Capa</h2>
+                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[2]; ?>" alt="Chania" width="460" height="345">
+                            <form class="form-horizontal" action="./php/insert.php" method="post">
+                                <fieldset>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="url"></label>
+                                        <div class="col-md-10">
+                                            <input name="url" placeholder="URL da Imagem" class="form-control input-md" required="Para Atualizar você deve inserir um Link" type="text">
+                                            <input type="hidden" name="idimg" value="3">
+                                            <span class="help-block">Cole aqui sua URL de nova imagem</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+
+                                            <button name="atualizeImg" value="atualizeImg" type="submit" class="btn btn-success" style="cursor:pointer">Atualizar</button>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>                            
+                        </div>
+
+                    </div>
+                    
+                    <div class="row">
+
+                        <!----------------------------------------------------------------------------------------------------------------------->
+                        <!--Primeira Coluna de Fotos Primeira Sessão-->
+                        <div class="col-sm-4">                      
+                            <h2>Foto de Capa</h2>
+                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[3]; ?>" alt="Chania" width="460" height="345">
+                            <form class="form-horizontal" action="./php/insert.php" method="post">
+                                <fieldset>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="url"></label>
+                                        <div class="col-md-10">
+                                            <input name="url" placeholder="URL da Imagem" class="form-control input-md" required="Para Atualizar você deve inserir um Link" type="text">
+                                            <input type="hidden" name="idimg" value="4">
+                                            <span class="help-block">Cole aqui sua URL de nova imagem</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+
+                                            <button name="atualizeImg" value="atualizeImg" type="submit" class="btn btn-success" style="cursor:pointer">Atualizar</button>
                                         </div>
                                     </div>
 
@@ -87,18 +155,17 @@ endwhile;
                             </form>
                         </div>
 
-                        <!----------------------------------------------------------------------------------------------------------------------->
-                        <!--Primeira Coluna de Fotos Primeira Sessão-->
-                        <div class="col-sm-4">
+                        <div class="col-sm-4">                            
                             <h2>Foto de Capa</h2>
-                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[1]; ?>" alt="Chania" width="460" height="345" border="5px">
-                            <form class="form-horizontal">
+                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[4]; ?>" alt="Chania" width="460" height="345">
+                            <form class="form-horizontal" action="./php/insert.php" method="post">
                                 <fieldset>
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="url"></label>
                                         <div class="col-md-10">
-                                            <input id="url" name="url" placeholder="URL da Imagem" class="form-control input-md" required="" type="text">
+                                            <input name="url" placeholder="URL da Imagem" class="form-control input-md" required="Para Atualizar você deve inserir um Link" type="text">
+                                            <input type="hidden" name="idimg" value="5">
                                             <span class="help-block">Cole aqui sua URL de nova imagem</span>
                                         </div>
                                     </div>
@@ -106,51 +173,27 @@ endwhile;
                                     <!-- Button -->
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Atualizar</button>
+
+                                            <button name="atualizeImg" value="atualizeImg" type="submit" class="btn btn-success" style="cursor:pointer">Atualizar</button>
                                         </div>
                                     </div>
 
                                 </fieldset>
                             </form>
-
-                            <!--Primeira Coluna de Fotos Segunda Sessão-->
-                            <h2>Foto de Capa</h2>
-                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[4]; ?>" alt="Chania" width="460" height="345" border="5px">
-                            <form class="form-horizontal">
-                                <fieldset>
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="url"></label>
-                                        <div class="col-md-10">
-                                            <input id="url" name="url" placeholder="URL da Imagem" class="form-control input-md" required="" type="text">
-                                            <span class="help-block">Cole aqui sua URL de nova imagem</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Button -->
-                                    <div class="form-group">
-                                        <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Atualizar</button>
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-
                         </div>
 
-                        <!----------------------------------------------------------------------------------------------------------------------->
-                        <!--Primeira Coluna de Fotos Primeira Sessão-->
                         <div class="col-sm-4">
+                            <!--Primeira Coluna de Fotos, Segunda Sessão-->
                             <h2>Foto de Capa</h2>
-                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[3]; ?>" alt="Chania" width="460" height="345" border="5px">
-                            <form class="form-horizontal">
+                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[5]; ?>" alt="Chania" width="460" height="345">
+                            <form class="form-horizontal" action="./php/insert.php" method="post">
                                 <fieldset>
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="url"></label>
                                         <div class="col-md-10">
-                                            <input id="url" name="url" placeholder="URL da Imagem" class="form-control input-md" required="" type="text">
+                                            <input name="url" placeholder="URL da Imagem" class="form-control input-md" required="Para Atualizar você deve inserir um Link" type="text">
+                                            <input type="hidden" name="idimg" value="6">
                                             <span class="help-block">Cole aqui sua URL de nova imagem</span>
                                         </div>
                                     </div>
@@ -158,37 +201,13 @@ endwhile;
                                     <!-- Button -->
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Atualizar</button>
+
+                                            <button name="atualizeImg" value="atualizeImg" type="submit" class="btn btn-success" style="cursor:pointer">Atualizar</button>
                                         </div>
                                     </div>
 
                                 </fieldset>
                             </form>
-
-                            <!--Primeira Coluna de Fotos Segunda Sessão-->
-                            <h2>Foto de Capa</h2>
-                            <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[5]; ?>" alt="Chania" width="460" height="345" border="5px">
-                            <form class="form-horizontal">
-                                <fieldset>
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="url"></label>
-                                        <div class="col-md-10">
-                                            <input id="url" name="url" placeholder="URL da Imagem" class="form-control input-xl" required="" type="text">
-                                            <span class="help-block">Cole aqui sua URL de nova imagem</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Button -->
-                                    <div class="form-group">
-                                        <div class="col-md-4">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Atualizar</button>
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-
                         </div>
 
                     </div>

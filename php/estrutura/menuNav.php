@@ -27,14 +27,14 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">MaisonChic.com.br</span>
+                    <span class="nav-link-text">Atualizações de Site</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="./beta.php">Fotos</a>
+                        <a href="./fotos.php">Atualizar Fotos</a>
                     </li>
                     <li>
-                        <a href="#">Contatos</a>
+                        <a href="#">Atualizar Textos</a>
                     </li>
                 </ul>
             </li>
@@ -89,7 +89,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Link</span>
+                    <span class="nav-link-text">Visitar Site</span>
                 </a>
             </li>
         </ul>
