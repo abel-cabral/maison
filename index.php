@@ -3,7 +3,7 @@
     @require_once("./php/session.php");    
     @require_once("./php/header.php");
     
-    //Com chamando essa function de session.php apenas usuarios logados podem acessa o index.php
+    //Com chamando essa function de session.php apenas usuarios logados podem acessa o index.php dheymes josé silva
     $userdeslogado = userdeslogado();
     
     //MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
