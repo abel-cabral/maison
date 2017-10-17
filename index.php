@@ -6,7 +6,7 @@
     //Com chamando essa function de session.php apenas usuarios logados podem acessa o index.php
     $userdeslogado = userdeslogado();
     
-    //Eu sou Eu Mesmo
+    //Eu sou Eu Mesmo porque sou eu
     echo @$_SESSION['mensagemStatus'];
     unset($_SESSION['mensagemStatus']);
 ?>
