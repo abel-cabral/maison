@@ -9,9 +9,9 @@
   <meta name="author" content="Abel Cabral de Arruda">
   <title>Centro de Controle Maison Chic App</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="./vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="./css/sb-admin.css" rel="stylesheet">
 </head>

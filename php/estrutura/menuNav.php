@@ -27,7 +27,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Atualizações de Site</span>
+                    <span class="nav-link-text">Atualizações do Site</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
@@ -41,17 +41,17 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
-                    <span class="nav-link-text">Example Pages</span>
+                    <span class="nav-link-text">Central do Administrador</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="register.php">Cadastro de Administradores</a>
+                        <a href="register.php">Cadastrar Administradores</a>
                     </li>
                     <li>
                         <a href="forgot-password.php">Forgot Password Page</a>
                     </li>
                     <li>
-                        <a href="blank.php">Blank Page</a>
+                        <a href="blank.php">Listar Administradores do Site</a>
                     </li>
                 </ul>
             </li>
