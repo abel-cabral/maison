@@ -8,6 +8,7 @@ function userdeslogado()
     if (!isset($_SESSION["user_id"]) || !isset($_SESSION["user_name"]))
     {
         // Usuário não logado! Redireciona para a página de login
+        $_SESSION['mensagemStatus'] = "<script>alert('Acesso Restrito, Logue-se');</script>";
         header("Location: ./login.php");
         exit;
     }

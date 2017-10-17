@@ -11,7 +11,7 @@
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Visão Geral</span>
                 </a>
-            </li>            
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-wrench"></i>
@@ -36,14 +36,14 @@
                         <a href="register.php">Cadastrar Administradores</a>
                     </li>
                     <li>
-                        <a href="forgot-password.php">Alterar Meus Dados</a>
+                        <a href="meusDados.php">Alterar Meus Dados</a>
                     </li>
                     <li>
                         <a href="verAdm.php">Ver Administradores do Site</a>
                     </li>
                 </ul>
             </li>
-            
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-link"></i>
@@ -60,9 +60,33 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-            <!--Borão de Logout-->
+            <!--Botão de Logout-->
             <li class="nav-item">
-                <a class="nav-link" data-toggle="modal"><h4>Boa tarde! <?php echo ucwords($_SESSION['user_name']);?></h4></a>
+
+                <a class="nav-link" data-toggle="modal">
+
+                    <h4 id="saudacao">
+                        <!--Esse script sauda o usuario com base na hora. Obs: se não estiver num script externo, você deve coloca-lo dentro da div que irá usar, ou nao vai funcionar.-->
+                        <script>
+                            var today = new Date();
+                            var curHr = today.getHours();
+                            var saudacao;
+
+                            if (curHr < 12) {
+                                saudacao = "Olá, Bom Dia! ";
+                            } else if (curHr < 18) {
+                                saudacao = "Oi, Boa Tarde! ";
+                            } else {
+                                saudacao = "Boa Noite ";
+                            }
+                            document.getElementById("saudacao").textContent = saudacao;
+                        </script>
+                        
+                        <!--Aqui continuamos com o php, nao é preciso concatenar-->
+                        <?php echo ucwords($_SESSION['user_name']);?>
+                        <!--Resultado: Bom dia, senhor Tal-->
+                    </h4>
+                </a>
             </li>
         </ul>
 

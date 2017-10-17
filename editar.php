@@ -65,11 +65,11 @@ if(!is_array($resultado_msg_contato)){
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <label for="exampleInputPassword1">Senha</label>
-                                    <input class="form-control" id="senha1" name="senha" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+                                    <input class="form-control" id="senha" name="senha" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleConfirmPassword">Confirmar Senha</label>
-                                    <input class="form-control" id="senha2" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+                                    <input class="form-control" name="senha2" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
 
                                 </div>
                             </div>
@@ -82,7 +82,7 @@ if(!is_array($resultado_msg_contato)){
 
                     <!-- <div class="text-center">
                     <a class="d-block small mt-3" href="login.php">Login Page</a>
-                    <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
+                    <a class="d-block small" href="meusDados.php">Forgot Password?</a>
                 </div> -->
                 </div>
             </div>

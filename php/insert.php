@@ -18,6 +18,7 @@ session_start();
     //Essas variaveis recebem o valor dos campos do fomulario, usando seu name como guia.
     @$login = strtolower($_POST['login']);
     @$senha = crypt($_POST['senha'], "somesalt");
+    @$senha2 = crypt($_POST['senha2'], "somesalt");
     @$adm = ucwords($_POST['adm']);
     
     
@@ -28,6 +29,12 @@ session_start();
     $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
     header("location: ../index.php");
 }
+        //Aqui verifico se as senhas são identicas
+    elseif($senha != $senha2){
+        $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
+        header("location: ../register.php");
+        exit;
+    }
 else
 {
 
@@ -53,13 +60,21 @@ else
         }
 }
     }
+//------------------------------------------------------------------------------------------
     elseif (isset($atualize))
     {
         if ($_SESSION['user_id'] != 29)
 {
     $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
-    header("location: ../index.php");
+    header("location: ../index.php");    
 }
+    //Aqui verifico se as senhas são identicas
+    elseif($senha != $senha2){
+        $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
+        header("location: ../verAdm.php");
+        exit;
+    }    
+        
 else
 {
 
@@ -92,13 +107,21 @@ else
         }
 }
     }
-elseif (isset($atualizeSeu))
+//------------------------------------------------------------------------------------------
+    elseif (isset($atualizeSeu))
     {
         if ($_SESSION['user_id'] != $_SESSION['user_id'])
 {
     $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
     header("location: ../index.php");
-}
+}   
+      //Aqui verifico se as senhas são identicas
+    elseif($senha != $senha2){
+        $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
+        header("location: ../meusDados.php");
+        exit;
+    }      
+        
 else
 {
 
@@ -131,6 +154,7 @@ else
         }
 }
     }
+//------------------------------------------------------------------------------------------    
     elseif (isset($exclua))
     {
         if ($_SESSION['user_id'] != 29)
@@ -138,11 +162,19 @@ else
     $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
     header("location: ../index.php");
 }
+        
 else
 {
 
         //Essa Variavel só existem em atualização ou exclusão estou a puxando pela barra de navegação
         $idgerente = $_GET["idgerente"];
+    
+        //Aqui evito que ADM Maison apague a si proprio
+        if($idgerente == 29){
+            $_SESSION['mensagemStatus'] = "<script>alert('Essa Conta Não Pode Ser Apagada :/');</script>";
+            header("location: ../verAdm.php");
+            exit;
+        }
 
         //Com essa variavel informo o que quero buscar no banco de dados
         $sql_msg_contatos = "DELETE FROM gerente WHERE idgerente = :idgerente";
@@ -165,6 +197,7 @@ else
 }
 
     }
+//------------------------------------------------------------------------------------------
    elseif (isset($atualizeImg))
    {
        //Essas Variaveis aqui recebem o URL e ID das imagens
@@ -195,6 +228,7 @@ else
         }
        
    }
+//------------------------------------------------------------------------------------------
     elseif(isset($atualizeTxt)){
         //Essas Variaveis aqui recebem o URL e ID das imagens
        $idtxt = $_POST['idtxt'];

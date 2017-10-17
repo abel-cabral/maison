@@ -8,6 +8,10 @@ $userdeslogado = userdeslogado();
 //chama as configurações com o banco de dados
 @require_once("./php/config.php");
 
+//MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
+    echo @$_SESSION['mensagemStatus'];
+    unset($_SESSION['mensagemStatus']);
+
 //Com esse if apenas  id 29 maison podera fazer qualquel alteração/inclusao no banco
 /*if($_SESSION['user_id'] != 29){
     $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";    
@@ -65,11 +69,11 @@ if(!is_array($resultado_msg_contato)){
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <label for="exampleInputPassword1">Senha</label>
-                                    <input class="form-control" id="senha1" name="senha" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+                                    <input class="form-control" name="senha" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleConfirmPassword">Confirmar Senha</label>
-                                    <input class="form-control" id="senha2" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+                                    <input class="form-control" name="senha2" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
 
                                 </div>
                             </div>
@@ -82,7 +86,7 @@ if(!is_array($resultado_msg_contato)){
 
                     <!-- <div class="text-center">
                     <a class="d-block small mt-3" href="login.php">Login Page</a>
-                    <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
+                    <a class="d-block small" href="meusDados.php">Forgot Password?</a>
                 </div> -->
                 </div>
             </div>

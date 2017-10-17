@@ -3,6 +3,9 @@
     @require_once("./php/session.php");    
     @require_once("./php/header.php");
     $userlogado = userlogado();
+    //MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
+    echo @$_SESSION['mensagemStatus'];
+    unset($_SESSION['mensagemStatus']);
     
     
     
@@ -36,7 +39,7 @@
                         }             
                         ?>
                         
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>
