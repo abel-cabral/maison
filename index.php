@@ -6,7 +6,7 @@
     //Com chamando essa function de session.php apenas usuarios logados podem acessa o index.php
     $userdeslogado = userdeslogado();
     
-    //MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
+    //Eu sou o Abel
     echo @$_SESSION['mensagemStatus'];
     unset($_SESSION['mensagemStatus']);
 ?>
