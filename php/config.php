@@ -2,10 +2,10 @@
 
 function conectar(){
 try{
-    $host = 'us-cdbr-iron-east-05.cleardb.net';
-    $dbname = 'heroku_629545ab3ab0fce';
-    $username = 'b2038f1ecb1008';
-    $password = 'e85e48c7';
+    $host = 'lgg2gx1ha7yp2w0k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    $dbname = 'maison';
+    $username = 'pvyia7kons2d8a3u';
+    $password = 'thp7b58xbqnorg11';
     $charset = 'utf8';
     $collate = 'utf8_unicode_ci';
     $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
