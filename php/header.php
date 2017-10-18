@@ -47,6 +47,9 @@
     <meta name="og:type" content="website">
     <!-- Fim das Metas Tags -->
 
+
+    <!--Aqui Vai nosso Script que vai trocar o endereço automaticamente-->
+
     <!-- Identificação do APP e da URL -->
     <div id="fb-root"></div>
     <script>
@@ -61,6 +64,12 @@
 
     </script>
 
+    <!--Google Maps PErsonalizado-->
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./maps/css/style.css">
+    <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
 
 

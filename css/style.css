@@ -3238,5 +3238,8 @@ section#tips-part {
     opacity: 0.9;
   }
  
-  
+/*-------------------CSS do Abel, favor evitar alterar------------------------*/
+#comentarios {
+    background-color: #ffffffb3;
+}
  

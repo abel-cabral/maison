@@ -356,7 +356,7 @@ require_once ('./php/header.php');
                             </div>
 
                             <!-- Aqui vou inserir o Comentário do facebook -->
-                            <div class="fb-comments" data-href="http://www.maisonchic.com.br" data-numposts="7"></div>
+                            <div class="fb-comments" data-href="http://www.maisonchic.com.br" data-numposts="7" data-width="100%"></div>
 
 
                         </section>
@@ -410,21 +410,30 @@ require_once ('./php/header.php');
 
                         </section>
 
-                        < <footer class="pageFooter">
-                            <div class="btnContainer">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14709.779214319804!2d-43.0036293!3d-22.8230274!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x319a15cd458bfb70!2sMaison+Chic+Sal%C3%A3o+de+Beleza+e+Aluguel+Trajes+de+Noivas!5e0!3m2!1spt-BR!2sbr!4v1508243407316" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
+                        <?php
+                            @require_once('./maps/maps.html');
+                        ?>
 
-                            <div class="btnContainer">
-                                <a class="LC-logo" href="#/">
+
+                            <footer class="pageFooter">
+
+                                <div class="btnContainer">
+                                    <a class="LC-logo" href="#/">
                                 <i class="icon-LClogo"></i>
                             </a>
-                            </div>
+                                </div>
                             </footer>
 
             </main>
 
         </div>
+
+        <!--Scripts-->
+        <!--Script do Google Maps-->
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="./maps/js/index.js"></script>
+
         <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/jquery-migrate.js'></script>
         <script type='text/javascript' src='js/jquery.form.js'></script>
