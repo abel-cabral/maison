@@ -1,0 +1,659 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    color: 373C3F;
+    font-family: "museo-sans";
+    font-weight: 300;
+}
+
+p {
+    line-height: 40px;
+    font-size: 16px;
+}
+
+/*****************************
+COMMON ELEMENTS
+******************************/
+
+.page {
+    overflow: hidden;
+}
+
+.full-wrapper {
+    margin: 0 5%;
+}
+
+.relative {
+    postion: relative;
+}
+
+.clear {
+    clear: both;
+}
+
+/*****************************
+ MAIN MENU - STICKY MENU
+******************************/
+
+#main-nav {
+    width: 100%;
+    height: 65px;
+    display: block;
+    background-color: transparent;
+    color: #FFF;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
+    padding-top: 15px;
+}
+
+#main-nav {
+    -webkit-transition: 1s ease all;
+    transition: 1s ease all;
+}
+
+#main-nav.scrolling {
+    background-color: black;
+}
+
+#nav-logo-wrap a img {
+    width: 200px;
+}
+
+#nav-logo-wrap {
+    float: left;
+    margin-right: 20px;
+}
+
+#nav-menu-wrap {
+    float: right;
+    padding-top: 7px;
+}
+
+#nav-menu-wrap a {
+    text-decoration: none;
+}
+
+#nav-page-section {
+    float: left;
+}
+
+#nav-tools-section {
+    float: right;
+}
+
+#nav-menu-wrap ul {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#nav-menu-wrap ul li,
+#nav-tools-wrap ul li {
+    display: inline;
+}
+
+#nav-page-section ul li a,
+#nav-tools-section ul li a {
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+#nav-page-section ul li a {
+    color: rgba(255, 255, 255, 0.84);
+}
+
+#nav-page-section ul li a:hover {
+    border-top: 4px solid #00ACD4;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.separator-menu {
+    float: left;
+    height: 25px;
+    background: #FFF;
+    display: block;
+    width: 1px;
+    margin: -3px 0 0 40px;
+}
+
+a.submit-btn-nav {
+    color: #00ACD4;
+    margin-left: 0 !important;
+}
+
+a.submit-btn-nav:hover {
+    color: #FFF;
+}
+
+a.signin-btn-nav {
+    color: #FFF;
+    background-color: #373c3f;
+    height: 30px;
+    padding: 6px 10px;
+    border: #373c3f 1px solid;
+    border-radius: 4px;
+    text-align: center;
+}
+
+a.signin-btn-nav:hover {
+    background-color: transparent;
+    border: #fff 1px solid;
+    color: #fff;
+}
+
+a.register-btn-nav {
+    color: #FFF;
+    background-color: #00ACD4;
+    height: 30px;
+    padding: 6px 10px;
+    border: #00ACD4 1px solid;
+    border-radius: 4px;
+    text-align: center;
+}
+
+a.register-btn-nav:hover {
+    background-color: transparent;
+    border: #fff 1px solid;
+    color: #fff;
+    padding-top: 5px;
+}
+
+/*HAMBURGER MENU*/
+
+/*icon+overlay*/
+
+.overlay-menu ul li a {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    top: 5px;
+}
+
+.overlay-menu ul li a:after {
+    content: '';
+    position: absolute;
+    background: #262b2e;
+    height: 2px;
+    width: 0%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0;
+    -webkit-transition: .35s ease;
+    transition: .35s ease;
+}
+
+.overlay-menu ul li a:hover:after,
+.overlay-menu ul li a:focus:after,
+.overlay-menu ul li a:active:after {
+    width: 100%;
+}
+
+.button_container {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    height: 26px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 100;
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+}
+
+.button_container:hover {
+    opacity: .7;
+}
+
+.button_container.active .top {
+    -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
+    transform: translateY(11px) translateX(0) rotate(45deg);
+    background: #FFF;
+}
+
+.button_container.active .middle {
+    opacity: 0;
+    background: #FFF;
+}
+
+.button_container.active .bottom {
+    -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+    transform: translateY(-11px) translateX(0) rotate(-45deg);
+    background: #FFF;
+}
+
+.button_container span {
+    background: #FFF;
+    border: none;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: all .35s ease;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+
+.button_container span:nth-of-type(2) {
+    top: 11px;
+}
+
+.button_container span:nth-of-type(3) {
+    top: 22px;
+}
+
+.overlay {
+    position: fixed;
+    background: #262b2e;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .35s, visibility .35s, height .35s;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+}
+
+.overlay.open {
+    opacity: .9;
+    visibility: visible;
+    height: 100%;
+}
+
+.overlay.open li {
+    display: block;
+    -webkit-animation: fadeInRight .5s ease forwards;
+    animation: fadeInRight .5s ease forwards;
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+
+.overlay.open li:nth-of-type(2) {
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+.overlay.open li:nth-of-type(3) {
+    -webkit-animation-delay: .45s;
+    animation-delay: .45s;
+}
+
+.overlay.open li:nth-of-type(4) {
+    -webkit-animation-delay: .50s;
+    animation-delay: .50s;
+}
+
+.overlay nav.overlay-menu {
+    position: relative;
+    height: 70%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+}
+
+.overlay ul li {
+    display: block;
+    height: 25%;
+    height: calc(100% / 4);
+    min-height: 50px;
+    position: relative;
+    opacity: 0;
+}
+
+.overlay ul li a {
+    display: block;
+    position: relative;
+    color: #FFF;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.overlay ul li a:hover:after,
+.overlay ul li a:focus:after,
+.overlay ul li a:active:after {
+    width: 100%;
+}
+
+.overlay ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 3px;
+    background: #FFF;
+    -webkit-transition: .35s;
+    transition: .35s;
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+/*****************************
+ HOME SECTION - CANVAS + INTRO
+******************************/
+
+.home-section {
+    position: relative;
+    width: 100%;
+    background: #262b2e;
+    overflow: hidden;
+}
+
+#wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 25;
+    height: 100%;
+    text-align: center;
+}
+
+#home-content {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#home-text {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+
+#title {
+    position: relative;
+    min-height: 220px;
+}
+
+#title h2 {
+    color: #fff;
+    font-size: 65px;
+    font-family: "museo-slab";
+    font-weight: 600;
+    line-height: 50px;
+}
+
+#title h2 > span {
+    -webkit-transition: opacity linear 1.5s;
+    transition: opacity linear 1.5s;
+}
+
+#title h3 {
+    color: #fff;
+    font-size: 22px;
+    font-family: "museo-sans";
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+/*** SCROLL HOMEPAGE ***/
+
+.local-scroll {
+    width: 120px;
+    height: 50px;
+    margin-left: -60px;
+    bottom: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.scroll-down:before {
+    display: block;
+    content: "";
+    width: 32px;
+    height: 32px;
+    border: 3px solid #FFF;
+    background: transparent !important;
+    margin: 0 0 0 -20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background: #fff;
+    border-radius: 24px;
+    z-index: 1;
+}
+
+i {
+    display: inline-block;
+    font-style: normal;
+    position: relative;
+}
+
+i.fa,
+i.fa-chevron-down {
+    color: #fff;
+    display: block;
+    top: 26px;
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    -webkit-animation: fadeInDown 1.2s linear infinite;
+    animation: fadeInDown 1.2s linear infinite;
+    position: absolute;
+    left: 50%;
+    margin-left: -10.5px;
+}
+
+/*** CANVAS HOMEPAGE ***/
+
+#canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/*****************************
+ PAGE ELEMENTS
+******************************/
+
+.page-section {
+    background: #fff;
+    width: 100%;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 80px 0;
+}
+
+.bkg-white {
+    background-color: #fff;
+}
+
+.bkg-gray {
+    background-color: #f9f9f9;
+}
+
+.container {
+    /*temp: @media (min-width: 1200px) */
+    width: 1170px;
+    /**/
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+
+.container h2 {
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.container h2:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    border-bottom: 1px solid #00ACD4;
+    top: 80px;
+    width: 80px;
+    left: 45%;
+    margin-left: 15px;
+}
+
+.intro-body,
+.process-body {
+    text-align: center;
+}
+
+/*****************************
+MEDIA QUERY
+******************************/
+
+@media only screen and (min-width: 1280px) {
+    .button_container,
+    #overlay {
+        display: none;
+    }
+    #nav-tools-section,
+    #nav-page-section {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .button_container {
+        display: block;
+    }
+    #nav-tools-section,
+    #nav-page-section,
+    .separator-menu {
+        display: none;
+    }
+}
+
+/*****************************
+ CSS3 ANIMATIONS
+******************************/
+
+/* used for home scroll arrow */
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        top: 30px;
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        top: 31px;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
+        top: 32px;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        top: 30px;
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        top: 31px;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
+        top: 32px;
+    }
+}
+
+
+
+/**/
+
+#recebedora {
+    z-index: -1000;
+    position: absolute;
+    width: 100%;
+    height: 1000px;
+    background-image: url("http://flower-wallpaper.org/wp-content/uploads/2016/10/flower-girl-hairstyles-wallpaper3.jpg");
+    opacity: 0.8;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*Configurançao do Carrousel */
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

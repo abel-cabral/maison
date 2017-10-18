@@ -6,65 +6,9 @@ require_once ('./php/header.php');
 ?>
 
     <body>
-        <div class="pushWrapper">
-            <!-- Header (shown on mobile only) -->
-            <header class="pageHeader">
-                <!-- Menu Trigger -->
-                <button class="menu-trigger">
-                    <span class="lines"></span>
-                </button>
-
-                <!-- Logo -->
-                <a class="headerLogo smoothScroll" href="index.html" style="align:center">
-                    <i class=" step icon-bank size-24 icon-gold"></i>
-                    <span class="text">Maison Chic</span>
-                </a>
-            </header>
-
-            <div class="sidebar">
-
-                <nav class="mainMenu">
-                    <ul class="menu">
-
-                        <li>
-                            <a class="smoothScroll" href="html/books.html" title="Get a home">
-                                <i class="icon-presentation size-24 icon-gold"></i><span class="text">Album de Fotos</span></a>
-                        </li>
-
-                        <li>
-                            <a class="smoothScroll" href="html/contatos.html" title="Contact Form">
-                                <i class="step icon-envelope-1 size-24 icon-gold"></i><span class="text">Contatos</span></a>
-                        </li>
-
-                        <li>
-                            <a class="smoothScroll" href="login.html" title="login">
-                                <i class="icon-settings-wheel size-24 icon-gold"></i><span class="text">Adm</span></a>
-                        </li>
-
-                        <li>
-                            <a class="smoothScroll" href="#eventos" title="eventos">
-                                <i class="icon-group size-24 icon-gold"></i><span class="text">Eventos</span></a>
-                        </li>
-
-                        <li>
-                            <a class="smoothScroll" href="#comentarios" title="Comentarios">
-                                <i class="icon-identification size-24 icon-gold"></i><span class="text">Comentários</span></a>
-                        </li>
-
-                    </ul>
-                </nav>
-
-                <nav class="backToTop">
-                    <ul class="backToTop-menu">
-                        <li>
-                            <a class="smoothScroll" href="#section-intro" title="to the top">
-
-                                <span class="text" style="color:red">Topo</span></a>
-                        </li>
-                    </ul>
-                </nav>
-
-            </div>
+        <div class="container-fluid">
+            
+          
 
             <!-- Share Menu -->
             <nav class="shareMenu">
@@ -110,7 +54,7 @@ require_once ('./php/header.php');
             </nav>
 
             <!-- Main -->
-            <main>
+            <section class="container-fluid">
 
                 <!-- FORMS -->
 
@@ -427,7 +371,7 @@ require_once ('./php/header.php');
                                 </div>
                             </footer>
 
-            </main>
+            </section>
 
         </div>
 
