@@ -11,14 +11,14 @@ require_once ('./php/header.php');
             <header class="pageHeader">
                 <!-- Menu Trigger -->
                 <button class="menu-trigger">
-                <span class="lines"></span>
-            </button>
+                    <span class="lines"></span>
+                </button>
 
                 <!-- Logo -->
                 <a class="headerLogo smoothScroll" href="index.html" style="align:center">
-                <i class=" step icon-bank size-24 icon-gold"></i>
-                <span class="text">Maison Chic</span>
-            </a>
+                    <i class=" step icon-bank size-24 icon-gold"></i>
+                    <span class="text">Maison Chic</span>
+                </a>
             </header>
 
             <div class="sidebar">
@@ -28,27 +28,27 @@ require_once ('./php/header.php');
 
                         <li>
                             <a class="smoothScroll" href="html/books.html" title="Get a home">
-                            <i class="icon-presentation size-24 icon-gold"></i><span class="text">Album de Fotos</span></a>
+                                <i class="icon-presentation size-24 icon-gold"></i><span class="text">Album de Fotos</span></a>
                         </li>
 
                         <li>
                             <a class="smoothScroll" href="html/contatos.html" title="Contact Form">
-                            <i class="step icon-envelope-1 size-24 icon-gold"></i><span class="text">Contatos</span></a>
+                                <i class="step icon-envelope-1 size-24 icon-gold"></i><span class="text">Contatos</span></a>
                         </li>
 
                         <li>
                             <a class="smoothScroll" href="login.html" title="login">
-                            <i class="icon-settings-wheel size-24 icon-gold"></i><span class="text">Adm</span></a>
+                                <i class="icon-settings-wheel size-24 icon-gold"></i><span class="text">Adm</span></a>
                         </li>
 
                         <li>
                             <a class="smoothScroll" href="#eventos" title="eventos">
-                            <i class="icon-group size-24 icon-gold"></i><span class="text">Eventos</span></a>
+                                <i class="icon-group size-24 icon-gold"></i><span class="text">Eventos</span></a>
                         </li>
 
                         <li>
                             <a class="smoothScroll" href="#comentarios" title="Comentarios">
-                            <i class="icon-identification size-24 icon-gold"></i><span class="text">Comentários</span></a>
+                                <i class="icon-identification size-24 icon-gold"></i><span class="text">Comentários</span></a>
                         </li>
 
                     </ul>
@@ -59,7 +59,7 @@ require_once ('./php/header.php');
                         <li>
                             <a class="smoothScroll" href="#section-intro" title="to the top">
 
-                            <span class="text" style="color:red">Topo</span></a>
+                                <span class="text" style="color:red">Topo</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -69,8 +69,8 @@ require_once ('./php/header.php');
             <!-- Share Menu -->
             <nav class="shareMenu">
                 <a href="#" class="share-menu-trigger">
-                <i class="step icon-thumbs-up size-24 icon-gold"></i>
-            </a>
+                    <i class="step icon-thumbs-up size-24 icon-gold"></i>
+                </a>
 
                 <div class="tweet-share">
 
@@ -118,7 +118,11 @@ require_once ('./php/header.php');
 
                 <section class="section-intro" id="section-intro" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 
+                    <div class="fb-like" data-href="https://www.facebook.com/maisonchic.salaodebeleza/" data-layout="standard" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
                     <div class="content">
+
+
+
                         <div class="container-template">
                             <h1>
                                 <i class=" step icon-diamond size-24 icon-gold"></i>
@@ -182,8 +186,8 @@ require_once ('./php/header.php');
 
 
                                 <a href="#revele" data-toggle="collapse">
-                                <img src="images/jo.jpg" class="img-circle person" alt="noiva" width="355" height="355">
-                            </a>
+                                    <img src="images/jo.jpg" class="img-circle person" alt="noiva" width="355" height="355">
+                                </a>
                                 <div id="revele" class="collapse">
                                     <img src="images/mch5.png" class="img" alt="noiva1" width="1155" height="355">
 
@@ -415,12 +419,11 @@ require_once ('./php/header.php');
                         ?>
 
 
-                            <footer class="pageFooter">
-
-                                <div class="btnContainer">
-                                    <a class="LC-logo" href="#/">
-                                <i class="icon-LClogo"></i>
-                            </a>
+                            <footer class="sticky-footer">
+                                <div class="container-fluid">
+                                    <div class="text-center">
+                                        <small>Desenvolvido por <a href="https://www.facebook.com/abel.yuracer">2016.1</a></small>
+                                    </div>
                                 </div>
                             </footer>
 

@@ -3243,3 +3243,11 @@ section#tips-part {
     background-color: #ffffffb3;
 }
  
+.fb-like {
+    float: left;
+    z-index: 10000;
+    margin: 10px;    
+}
+#u_0_5 {
+    visibility: hidden;
+}
