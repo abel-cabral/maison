@@ -420,7 +420,7 @@ a.register-btn-nav:hover {
 
 #title h2 {
     color: #fff;
-    font-size: 65px;
+    font-size: 12vmin;    
     font-family: "museo-slab";
     font-weight: 600;
     line-height: 50px;
@@ -520,16 +520,7 @@ i.fa-chevron-down {
     background-color: #f9f9f9;
 }
 
-.container {
-    /*temp: @media (min-width: 1200px) */
-    width: 1170px;
-    /**/
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-}
+
 
 .container h2 {
     margin-bottom: 80px;
@@ -657,3 +648,5 @@ MEDIA QUERY
     -o-background-size: cover;
     background-size: cover;
 }
+
+/*MAPS*/
