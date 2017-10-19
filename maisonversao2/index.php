@@ -1,3 +1,18 @@
+<?php 
+//VAI PARA O HTML
+//Local onde está a PDO que puxa do banco de dados
+//A variavel recebe o valor do return da function assim posso trabalhar tanto a tabela usuarios quanto a img
+//Fazemos um while para jogar as imagens num array e de lá puxamos por sua id.
+@require_once("./adm/php/verDados.php");
+$exibirImg = exibirImg();
+while($msg_login = $exibirImg->fetch(PDO::FETCH_ASSOC)):
+    $maedesanto[] = $msg_login['url'];
+endwhile;
+
+//Numero do Array começa a contar em 0, mas numero da linha na tabela começa em 1, então o arquivo no array 0 deve ter value 1:
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -53,7 +68,7 @@
     <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
     <!-- Fa Fa Fonts -->
-    
+
 
 </head>
 
@@ -145,7 +160,7 @@
 
 
                 <div id="home-content">
-                    <div id="recebedora">
+                    <div id="recebedora" style="background-image: url('<?php echo $maedesanto[0];//0=CAPA ?>')">
 
 
 
@@ -192,7 +207,7 @@
 
                     <!-------------------VIDEO PROMOCIONAL------------------------------->
                     <section class="video-promo-hero">
-                        <div class="video-promo-hero-bg">
+                        <div class="video-promo-hero-bg" style="background: url('<?php echo $maedesanto[1];//1=VIDEO ?>') no-repeat 50% 100%;">
                             <div class="row vcenter">
                                 <div class="col-md-12 vcenter"><a class="video-promo-watch" id="play-button" href="#"><i class="fa fa-play-circle video-promo-play-button"></i>Assistir Video Promocional</a></div>
                             </div>
@@ -223,7 +238,7 @@
 
 
                     <a href="#revele" data-toggle="collapse">
-                        <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.0-1/18740088_1535166643194358_4399013651339138115_n.jpg?oh=92e117cd41b7c217e474de469c787d6c&oe=5A8484C7" class="img-circle person" alt="noiva" width="250" height="250">
+                        <img src="<?php echo $maedesanto[2];//2=Fundadora ?>" class="img-circle person" alt="noiva" width="250" height="250">
                     </a>
                     <br>
                     <br>
@@ -242,12 +257,32 @@
 
             <section id="cd-google-map">
                 <div id="google-container"></div>
-                <div id="cd-zoom-in"></div>
-                <div id="cd-zoom-out"></div>
+
                 <address>Shopping Rosa - R. João Caetano, 185 - Loja 102 - Alcantara, São Gonçalo - RJ, 24710-405</address>
             </section>
         </section>
         <!------------------------------FIM DO MAPA--------------------------->
+
+        <hr><br>
+        <section class="container-fluid text-center">            
+                <div class="col-sm-12"><h1 id="brasil">Seja Um Dos Clientes Mais Satisfeitos do Brasil</h1></div><br><br><br><br><br><br><br><br>
+            <div class="row">
+                <div class="col-sm-12">
+                <div class="col-sm-4"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                <div class="col-sm-4"> <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                    <div class="col-sm-4"> <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                </div>
+                <div class="col-sm-12">
+                <div class="col-sm-6"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                <div class="col-sm-6"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                </div>
+            </div>
+            
+            
+           
+            
+        </section>
+
 
         <!------------------------------AQUI ENTRA OS COMENTARIOS--------------------------->
         <section class="page-section animated bkg-gray" id="section2">
@@ -256,6 +291,7 @@
                 <div class="process-body">
                     <!-- Aqui vou inserir o Comentário do facebook -->
                     <div class="fb-comments" data-href="http://www.maisonchic.com.br" data-numposts="7" data-width="100%"></div>
+
                 </div>
 
             </div>
@@ -263,30 +299,7 @@
 
         <!-- AQUI ENTRA O FOOTER -->
 
-        <footer class="footer-distributed">
-
-            <div class="footer-right">
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
-
-            </div>
-
-            <div class="footer-left">
-
-                <p class="footer-links">
-                    <a href="#">Início</a> ·
-                    <a href="#">Galeria</a> ·                    
-                    <a href="#">Avisos</a> ·
-                    <a href="#">Contatos</a>
-                </p>
-
-                <p>S2016.2 &copy; 2017</p>
-            </div>
-
-        </footer>
+        
     </div>
     <!-- [end page] -->
 
@@ -319,7 +332,7 @@
     <!--Scripts-->
     <!--Script do Google Maps-->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="./js/maps.js"></script>
     <!--JS do Efeito do Principal do Index-->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
