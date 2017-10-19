@@ -1,3 +1,23 @@
+/*--------------------Font Pagina-----------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+p, h1, h2, h3, h4, li{
+    font-family: 'Playfair Display', serif;
+}
+
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 html,
 body {
     padding: 0;
@@ -7,7 +27,6 @@ body {
     font-family: "museo-sans";
     font-weight: 300;
 }
-
 p {
     line-height: 40px;
     font-size: 16px;
@@ -20,15 +39,12 @@ COMMON ELEMENTS
 .page {
     overflow: hidden;
 }
-
 .full-wrapper {
     margin: 0 5%;
 }
-
 .relative {
     postion: relative;
 }
-
 .clear {
     clear: both;
 }
@@ -50,70 +66,56 @@ COMMON ELEMENTS
     position: fixed;
     padding-top: 15px;
 }
-
 #main-nav {
     -webkit-transition: 1s ease all;
     transition: 1s ease all;
 }
-
 #main-nav.scrolling {
     background-color: black;
 }
-
 #nav-logo-wrap a img {
     width: 200px;
 }
-
 #nav-logo-wrap {
     float: left;
     margin-right: 20px;
 }
-
 #nav-menu-wrap {
     float: right;
     padding-top: 7px;
 }
-
 #nav-menu-wrap a {
     text-decoration: none;
 }
-
 #nav-page-section {
     float: left;
 }
-
 #nav-tools-section {
     float: right;
 }
-
 #nav-menu-wrap ul {
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
 }
-
 #nav-menu-wrap ul li,
 #nav-tools-wrap ul li {
     display: inline;
 }
-
 #nav-page-section ul li a,
 #nav-tools-section ul li a {
     margin-left: 40px;
     text-decoration: none;
 }
-
 #nav-page-section ul li a {
     color: rgba(255, 255, 255, 0.84);
 }
-
 #nav-page-section ul li a:hover {
     border-top: 4px solid #00ACD4;
     color: #fff;
     text-transform: uppercase;
     padding-top: 20px;
 }
-
 .separator-menu {
     float: left;
     height: 25px;
@@ -122,16 +124,13 @@ COMMON ELEMENTS
     width: 1px;
     margin: -3px 0 0 40px;
 }
-
 a.submit-btn-nav {
     color: #00ACD4;
     margin-left: 0 !important;
 }
-
 a.submit-btn-nav:hover {
     color: #FFF;
 }
-
 a.signin-btn-nav {
     color: #FFF;
     background-color: #373c3f;
@@ -141,13 +140,11 @@ a.signin-btn-nav {
     border-radius: 4px;
     text-align: center;
 }
-
 a.signin-btn-nav:hover {
     background-color: transparent;
     border: #fff 1px solid;
     color: #fff;
 }
-
 a.register-btn-nav {
     color: #FFF;
     background-color: #00ACD4;
@@ -157,7 +154,6 @@ a.register-btn-nav {
     border-radius: 4px;
     text-align: center;
 }
-
 a.register-btn-nav:hover {
     background-color: transparent;
     border: #fff 1px solid;
@@ -166,6 +162,7 @@ a.register-btn-nav:hover {
 }
 
 /*HAMBURGER MENU*/
+
 
 /*icon+overlay*/
 
@@ -179,7 +176,6 @@ a.register-btn-nav:hover {
     overflow: hidden;
     top: 5px;
 }
-
 .overlay-menu ul li a:after {
     content: '';
     position: absolute;
@@ -193,13 +189,11 @@ a.register-btn-nav:hover {
     -webkit-transition: .35s ease;
     transition: .35s ease;
 }
-
 .overlay-menu ul li a:hover:after,
 .overlay-menu ul li a:focus:after,
 .overlay-menu ul li a:active:after {
     width: 100%;
 }
-
 .button_container {
     position: fixed;
     top: 18px;
@@ -211,28 +205,23 @@ a.register-btn-nav:hover {
     -webkit-transition: opacity .25s ease;
     transition: opacity .25s ease;
 }
-
 .button_container:hover {
     opacity: .7;
 }
-
 .button_container.active .top {
     -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
     transform: translateY(11px) translateX(0) rotate(45deg);
     background: #FFF;
 }
-
 .button_container.active .middle {
     opacity: 0;
     background: #FFF;
 }
-
 .button_container.active .bottom {
     -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
     transform: translateY(-11px) translateX(0) rotate(-45deg);
     background: #FFF;
 }
-
 .button_container span {
     background: #FFF;
     border: none;
@@ -245,15 +234,12 @@ a.register-btn-nav:hover {
     transition: all .35s ease;
     cursor: pointer;
 }
-
 .button_container span:nth-of-type(2) {
     top: 11px;
 }
-
 .button_container span:nth-of-type(3) {
     top: 22px;
 }
-
 .overlay {
     position: fixed;
     background: #262b2e;
@@ -267,13 +253,11 @@ a.register-btn-nav:hover {
     transition: opacity .35s, visibility .35s, height .35s;
     overflow: hidden;
 }
-
 .overlay.open {
     opacity: .9;
     visibility: visible;
     height: 100%;
 }
-
 .overlay.open li {
     display: block;
     -webkit-animation: fadeInRight .5s ease forwards;
@@ -281,22 +265,18 @@ a.register-btn-nav:hover {
     -webkit-animation-delay: .35s;
     animation-delay: .35s;
 }
-
 .overlay.open li:nth-of-type(2) {
     -webkit-animation-delay: .4s;
     animation-delay: .4s;
 }
-
 .overlay.open li:nth-of-type(3) {
     -webkit-animation-delay: .45s;
     animation-delay: .45s;
 }
-
 .overlay.open li:nth-of-type(4) {
     -webkit-animation-delay: .50s;
     animation-delay: .50s;
 }
-
 .overlay nav.overlay-menu {
     position: relative;
     height: 70%;
@@ -307,7 +287,6 @@ a.register-btn-nav:hover {
     font-weight: 400;
     text-align: center;
 }
-
 .overlay ul {
     list-style: none;
     padding: 0;
@@ -316,7 +295,6 @@ a.register-btn-nav:hover {
     position: relative;
     height: 100%;
 }
-
 .overlay ul li {
     display: block;
     height: 25%;
@@ -325,7 +303,6 @@ a.register-btn-nav:hover {
     position: relative;
     opacity: 0;
 }
-
 .overlay ul li a {
     display: block;
     position: relative;
@@ -333,13 +310,11 @@ a.register-btn-nav:hover {
     text-decoration: none;
     overflow: hidden;
 }
-
 .overlay ul li a:hover:after,
 .overlay ul li a:focus:after,
 .overlay ul li a:active:after {
     width: 100%;
 }
-
 .overlay ul li a:after {
     content: '';
     position: absolute;
@@ -353,7 +328,6 @@ a.register-btn-nav:hover {
     -webkit-transition: .35s;
     transition: .35s;
 }
-
 @-webkit-keyframes fadeInRight {
     0% {
         opacity: 0;
@@ -364,7 +338,6 @@ a.register-btn-nav:hover {
         left: 0;
     }
 }
-
 @keyframes fadeInRight {
     0% {
         opacity: 0;
@@ -386,7 +359,6 @@ a.register-btn-nav:hover {
     background: #262b2e;
     overflow: hidden;
 }
-
 #wrapper {
     position: absolute;
     top: 0;
@@ -396,7 +368,6 @@ a.register-btn-nav:hover {
     height: 100%;
     text-align: center;
 }
-
 #home-content {
     position: relative;
     display: table;
@@ -404,33 +375,26 @@ a.register-btn-nav:hover {
     height: 100%;
     text-align: center;
 }
-
 #home-text {
     display: table-cell;
     height: 100%;
     vertical-align: middle;
 }
-
-
-
 #title {
     position: relative;
     min-height: 220px;
 }
-
 #title h2 {
     color: #fff;
-    font-size: 12vmin;    
+    font-size: 12vmin;
     font-family: "museo-slab";
     font-weight: 600;
     line-height: 50px;
 }
-
 #title h2 > span {
     -webkit-transition: opacity linear 1.5s;
     transition: opacity linear 1.5s;
 }
-
 #title h3 {
     color: #fff;
     font-size: 22px;
@@ -452,7 +416,6 @@ a.register-btn-nav:hover {
     text-align: center;
     text-decoration: none;
 }
-
 .scroll-down:before {
     display: block;
     content: "";
@@ -468,13 +431,11 @@ a.register-btn-nav:hover {
     border-radius: 24px;
     z-index: 1;
 }
-
 i {
     display: inline-block;
     font-style: normal;
     position: relative;
 }
-
 i.fa,
 i.fa-chevron-down {
     color: #fff;
@@ -511,22 +472,16 @@ i.fa-chevron-down {
     box-sizing: border-box;
     padding: 80px 0;
 }
-
 .bkg-white {
     background-color: #fff;
 }
-
 .bkg-gray {
     background-color: #f9f9f9;
 }
-
-
-
 .container h2 {
     margin-bottom: 80px;
     position: relative;
 }
-
 .container h2:after {
     content: "";
     position: absolute;
@@ -537,7 +492,6 @@ i.fa-chevron-down {
     left: 45%;
     margin-left: 15px;
 }
-
 .intro-body,
 .process-body {
     text-align: center;
@@ -557,7 +511,6 @@ MEDIA QUERY
         display: inline;
     }
 }
-
 @media only screen and (max-width: 1280px) {
     .button_container {
         display: block;
@@ -572,6 +525,7 @@ MEDIA QUERY
 /*****************************
  CSS3 ANIMATIONS
 ******************************/
+
 
 /* used for home scroll arrow */
 
@@ -595,7 +549,6 @@ MEDIA QUERY
         top: 32px;
     }
 }
-
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -617,9 +570,7 @@ MEDIA QUERY
     }
 }
 
-
-
-/**/
+/*----------------------------------------------AQUI COMEÇA MINHAS EDIÇÕES--------------------------*/
 
 #recebedora {
     z-index: -1000;
@@ -636,6 +587,226 @@ MEDIA QUERY
     background-size: cover;
 }
 
+/*------------------------------------------------------------Configurançao do Video Promocional*/
 
-/*Configurançao do Carrousel */
+.vcenter {
+    align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    justify-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    height: 600px;
+}
+section.video-promo-hero {
+    position: relative;
+    height: 600px;
+    background: #000;
+    overflow: hidden;
+}
+section.video-promo-hero.playing-video .video-promo-hero-bg {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+section.video-promo-hero .video-promo-hero-bg {
+    background: url("https://www.walldevil.com/wallpapers/a77/hair-woman.jpg") no-repeat 50% 100%;
+    background-size: cover;
+    height: 100%;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    z-index: 10;
+}
+section.video-promo-hero .video-promo-hero-bg a.video-promo-watch {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    font-size: 45px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+section.video-promo-hero .video-promo-hero-bg a.video-promo-watch i {
+    -webkit-transform: rotate(0deg) scale(1);
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+}
+section.video-promo-hero .video-promo-hero-bg a.video-promo-watch:hover {
+    text-decoration: none;
+    font-size: 48px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+section.video-promo-hero .video-promo-hero-bg a.video-promo-watch:hover i {
+    -webkit-transform: rotate(120deg) scale(1);
+    -moz-transform: rotate(120deg) scale(1);
+    -ms-transform: rotate(120deg) scale(1);
+    transform: rotate(120deg) scale(1);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+}
+section.video-promo-hero .video-promo-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+section.video-promo-hero .video-promo-video-wrapper a.video-promo-video-close {
+    color: #ffffff;
+    z-index: 20000;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-size: 4rem;
+    opacity: 1;
+    font-weight: lighter;
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+}
+section.video-promo-hero .video-promo-video-wrapper a.video-promo-video-close:hover {
+    color: #ffffff;
+}
+section.video-promo-hero .video-promo-video-wrapper .video-promo-youtube-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+section.video-promo-hero .video-promo-video-wrapper .video-promo-youtube-wrapper .video-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+section.video-promo-hero .video-promo-video-wrapper .video-promo-youtube-wrapper .video-container #youtube-promo-video {
+    width: 100%;
+    height: 100%;
+}
+section.video-promo-hero .video-promo-play-button {
+    font-size: 80px;
+    margin-right: 26px;
+}
+
+/*------------------------------------------ Footer ----------------------------------------------------------------*/
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 45px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+	font-size:18px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
+
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
+}
 

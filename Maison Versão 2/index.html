@@ -49,12 +49,11 @@
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="../maps/css/style.css">
+    <link href="./css/maps.css" rel='stylesheet' type='text/css'>
     <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Fa Fa Fonts -->
+    
 
 </head>
 
@@ -93,7 +92,7 @@
                             </li>
                             <li class=""><a href="#section1"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
                             <li><a href="#section2"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> Seu Comentário</a></li>
+                            <li><a href="section3"><span class="glyphicon glyphicon-thumbs-up"></span> Seu Comentário</a></li>
                         </ul>
                     </div>
                     <div class="separator-menu"></div>
@@ -156,7 +155,7 @@
 
 
                         <div id="title">
-                            <img src="../images/logo_maison_branco.png" width="47%">
+                            <img src="./img/logo_maison_branco.png" width="47%">
                             <h2>
                                 <span style='color: #00acd4'>BELEZA</span>
                                 <span style='display: none; color: #755f93'>MELHORES CORTES</span>
@@ -189,8 +188,25 @@
         <section class="page-section animated bkg-white" id="section1">
             <div class="container">
                 <div class="intro-body">
-                    <h2 class="">VERUSCRIPT SUPPORT THE ENTIRE RESEARCH COMMUNITY</h2>
-                    <iframe width="854" height="480" src="https://www.youtube.com/embed/BtJ42ZAb8f8" frameborder="0" allowfullscreen></iframe>
+                    <h2 class="">Há Mais de 20 Anos Contruindo Sonhos</h2>
+
+                    <!-------------------VIDEO PROMOCIONAL------------------------------->
+                    <section class="video-promo-hero">
+                        <div class="video-promo-hero-bg">
+                            <div class="row vcenter">
+                                <div class="col-md-12 vcenter"><a class="video-promo-watch" id="play-button" href="#"><i class="fa fa-play-circle video-promo-play-button"></i>Assistir Video Promocional</a></div>
+                            </div>
+                        </div>
+                        <div class="video-promo-video-wrapper"><a class="close video-promo-video-close" id="pause-button" href="#">x</a>
+                            <div class="video-promo-youtube-wrapper">
+                                <div class="video-container">
+                                    <iframe id="youtube-promo-video" src="https://www.youtube.com/embed/qE7JzifyGc0?enablejsapi=1&amp;html5=1" frameborder="0" allowfullscreen=""></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-------------------FIM DO VIDEO PROMOCIONAL------------------------------->
+
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
 
@@ -204,18 +220,16 @@
             <div class="container">
 
                 <div class="row" align="center" id="projeto">
-                    
-                                
-                                <a href="#revele" data-toggle="collapse">
-                                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.0-1/18740088_1535166643194358_4399013651339138115_n.jpg?oh=92e117cd41b7c217e474de469c787d6c&oe=5A8484C7" class="img-circle person" alt="noiva" width="250" height="250">
-                                </a>
-                                <div id="revele" class="collapse">
-                                    <img src="../images/mch5.png" class="img" alt="noiva1" width="1155" height="355">
-                                    <p>"Meu trabalho é de gerações, minha tradição está na arte."</p>    
-                                </div><br><br>
-                                <h4>"Jo Rigon - Fundadora"</h4>
 
-                            </div>
+
+                    <a href="#revele" data-toggle="collapse">
+                        <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.0-1/18740088_1535166643194358_4399013651339138115_n.jpg?oh=92e117cd41b7c217e474de469c787d6c&oe=5A8484C7" class="img-circle person" alt="noiva" width="250" height="250">
+                    </a>
+                    <br>
+                    <br>
+                    <h3>"Jo Rigon - Fundadora"</h3>
+
+                </div>
 
             </div>
         </section>
@@ -247,14 +261,31 @@
             </div>
         </section>
 
-        <!-- [end .page-section] -->
+        <!-- AQUI ENTRA O FOOTER -->
 
-        <footer class="sticky-footer">
-            <div class="container-fluid">
-                <div class="text-center">
-                    <small>Desenvolvido por <a href="#">2016.1</a></small>
-                </div>
+        <footer class="footer-distributed">
+
+            <div class="footer-right">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
             </div>
+
+            <div class="footer-left">
+
+                <p class="footer-links">
+                    <a href="#">Início</a> ·
+                    <a href="#">Galeria</a> ·                    
+                    <a href="#">Avisos</a> ·
+                    <a href="#">Contatos</a>
+                </p>
+
+                <p>S2016.2 &copy; 2017</p>
+            </div>
+
         </footer>
     </div>
     <!-- [end page] -->
@@ -288,14 +319,14 @@
     <!--Scripts-->
     <!--Script do Google Maps-->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="../maps/js/index.js"></script>
+    
+    <script src="./js/maps.js"></script>
     <!--JS do Efeito do Principal do Index-->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js'></script>
     <script src="./js/index.js"></script>
-
-    <!--JS do Carroussel Principal-->
+    <!--JS do VIDEO PROMOCIONAL-->
+    <script src="./js/video.js"></script>
 
 
 </body>
