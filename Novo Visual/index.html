@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Animation Playground MkII</title>
+    <title>Maison Chic</title>
     <script src="https://use.typekit.net/zbv4fek.js"></script>
     <script>
         try {
@@ -24,7 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--CSS do Carrousell-->
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Aqui vai as Tags das Redes Sociais, é o que faz a miniatura no facebook!-->
     <!-- Motores de Busca -->
@@ -44,9 +45,9 @@
     <meta name="fb:app_id" content="1168589039940856">
     <meta name="og:type" content="website">
     <!-- Fim das Metas Tags -->
-    
+
     <!--MAPS-->
-     <!--Google Maps PErsonalizado-->
+    <!--Google Maps PErsonalizado-->
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -54,9 +55,12 @@
     <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!--Aqui Vai nosso Script que vai trocar o endereço automaticamente-->
 
     <!-- Identificação do APP e da URL -->
@@ -89,8 +93,8 @@
                             <li>
                                 <div class="fb-like" data-href="https://www.facebook.com/maisonchic.salaodebeleza/" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
                             </li>
-                            <li class=""><a href="#"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
+                            <li class=""><a href="#section1"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
+                            <li><a href="#section2"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> Seu Comentário</a></li>
                         </ul>
                     </div>
@@ -184,10 +188,9 @@
         <!-- [end .home-section] -->
 
 
-        <section class="page-section animated bkg-white" id="about">
+        <section class="page-section animated bkg-white" id="section1">
             <div class="container">
-
-                <div class="intro-body ">
+                <div class="intro-body">
                     <h2 class="">VERUSCRIPT SUPPORT THE ENTIRE RESEARCH COMMUNITY</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
@@ -208,22 +211,24 @@
 
             </div>
         </section>
-        
-        <!------------------------------AQUI ENTRA O MAPA--------------------------->
-        <header>
-            <h1>Onde Estamos Localizados?</h1>
-        </header>
 
-        <section id="cd-google-map">
-            <div id="google-container"></div>
-            <div id="cd-zoom-in"></div>
-            <div id="cd-zoom-out"></div>
-            <address>Shopping Rosa - R. João Caetano, 185 - Loja 102 - Alcantara, São Gonçalo - RJ, 24710-405</address>
+        <!------------------------------AQUI ENTRA O MAPA--------------------------->
+        <section>
+            <header>
+                <h1>Onde Estamos Localizados?</h1>
+            </header>
+
+            <section id="cd-google-map">
+                <div id="google-container"></div>
+                <div id="cd-zoom-in"></div>
+                <div id="cd-zoom-out"></div>
+                <address>Shopping Rosa - R. João Caetano, 185 - Loja 102 - Alcantara, São Gonçalo - RJ, 24710-405</address>
+            </section>
         </section>
         <!------------------------------FIM DO MAPA--------------------------->
-        
+
         <!------------------------------AQUI ENTRA OS COMENTARIOS--------------------------->
-        <section class="page-section animated bkg-gray" id="about">
+        <section class="page-section animated bkg-gray" id="section2">
             <div class="container">
 
                 <div class="process-body">
@@ -233,7 +238,7 @@
 
             </div>
         </section>
-        
+
         <!-- [end .page-section] -->
 
         <footer class="sticky-footer">
@@ -245,6 +250,52 @@
         </footer>
     </div>
     <!-- [end page] -->
+
+
+
+
+
+
+
+
+
+
+    <script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#nav-page-section a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
+
+
+
+
+
+
+
+
 
 
     <!-- [Script stiky menu ] -->
