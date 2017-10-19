@@ -42,7 +42,16 @@ $resultado_msg->execute();
     return $resultado_msg;
 }
 
+function qualifica(){
+    $PDO= conectar();
+//Puxa e Exibir do Banco de Dados
+$sql_qlf = "SELECT * FROM qlf";
 
+//Seleciona os Registro no BD e joga em Array
+$resultado_qlf = $PDO->prepare($sql_qlf);
+$resultado_qlf->execute();
+    return $resultado_qlf;
+}
 
 
 

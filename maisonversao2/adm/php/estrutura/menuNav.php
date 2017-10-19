@@ -24,6 +24,9 @@
                     <li>
                         <a href="./textos.php">Atualizar Textos</a>
                     </li>
+                    <li>
+                        <a href="./qualificacao.php">Controle de Qualificações</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">

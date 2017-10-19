@@ -12,6 +12,7 @@ $pdo = conectar();
 @$exclua = $_GET['exclua'];
 @$atualizeImg = $_POST['atualizeImg'];
 @$atualizeTxt = $_POST['atualizeTxt'];
+@$atualizeQlf = $_POST['atualizeQlf'];
 
 
 
@@ -224,6 +225,32 @@ elseif (isset($atualize)) {
         echo "Erro ao cadastrar";
         $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
         header("Location: ../textos.php");
+    }
+}
+//------------------------------------------------------------------------------------------
+    elseif (isset($atualizeQlf)) {
+    //Essas Variaveis aqui recebem o URL e ID das imagens
+    $idqlf = $_POST['idqlf'];
+    $qlf   = $_POST['qlf'];
+    
+    //Com essa variavel informo o que quero buscar no banco de dados
+    $sql_msg_contatos   = "UPDATE qlf SET qlf = :qlf WHERE idqlf = :idqlf";
+    //Aqui de fato eu conecto e verifico se elas existem
+    $insert_msg_contato = $pdo->prepare($sql_msg_contatos);
+    
+    //Aqui eu mostro de que variavel vem as informações do php e para onde vao no sql
+    $insert_msg_contato->bindParam(':qlf', $qlf);
+    $insert_msg_contato->bindParam(':idqlf', $idqlf, PDO::PARAM_INT);
+    
+    //basicamente aqui eu faço o ->execute() que de fato realiza a operação
+    if ($insert_msg_contato->execute()) {
+        
+        $_SESSION['mensagemStatus'] = "<script>alert('Atualizado com Sucesso!');</script>";
+        header("Location: ../qualificacao.php");
+    } else {
+        echo "Erro ao cadastrar";
+        $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
+        header("Location: ../qualificacao.php");
     }
 }
 

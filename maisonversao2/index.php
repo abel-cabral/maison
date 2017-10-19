@@ -5,10 +5,15 @@
 //Fazemos um while para jogar as imagens num array e de lá puxamos por sua id.
 @require_once("./adm/php/verDados.php");
 $exibirImg = exibirImg();
+$exibirQlf = qualifica();
 while($msg_login = $exibirImg->fetch(PDO::FETCH_ASSOC)):
     $maedesanto[] = $msg_login['url'];
+   
 endwhile;
-
+while($msg_qlf = $exibirQlf->fetch(PDO::FETCH_ASSOC)):
+    
+    $paidesanto[] = $msg_qlf['qlf'];
+endwhile;
 //Numero do Array começa a contar em 0, mas numero da linha na tabela começa em 1, então o arquivo no array 0 deve ter value 1:
 ?>
 
@@ -203,7 +208,7 @@ endwhile;
         <section class="page-section animated bkg-white" id="section1">
             <div class="container">
                 <div class="intro-body">
-                    <h2 class="">Há Mais de 20 Anos Contruindo Sonhos</h2>
+                    <h2 class=""><strong>Há Mais de 20 Anos Cuidando da Cabeça das Pessoas, Com a Máxima Dedicação. Assista Nossa História</strong></h2>
 
                     <!-------------------VIDEO PROMOCIONAL------------------------------->
                     <section class="video-promo-hero">
@@ -220,9 +225,7 @@ endwhile;
                             </div>
                         </div>
                     </section>
-                    <!-------------------FIM DO VIDEO PROMOCIONAL------------------------------->
-
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <!-------------------FIM DO VIDEO PROMOCIONAL------------------------------->                    
                 </div>
 
             </div>
@@ -232,10 +235,12 @@ endwhile;
         <!-- [end .page-section] -->
 
         <section class="page-section animated bkg-white" id="about">
+            
             <div class="container">
-
+                <div class="intro-body">
+                    <h2><p>"Me sinto muito realizada, quando vejo uma noiva saindo com tudo que eu tive a capacidade de escolher para atender ao bom gosto dela. Qualidade, equipe e treinamento focando sempre no cliente"</p></h2>
                 <div class="row" align="center" id="projeto">
-
+                    
 
                     <a href="#revele" data-toggle="collapse">
                         <img src="<?php echo $maedesanto[2];//2=Fundadora ?>" class="img-circle person" alt="noiva" width="250" height="250">
@@ -245,7 +250,7 @@ endwhile;
                     <h3>"Jo Rigon - Fundadora"</h3>
 
                 </div>
-
+</div>
             </div>
         </section>
 
@@ -268,13 +273,13 @@ endwhile;
                 <div class="col-sm-12"><h1 id="brasil">Seja Um Dos Clientes Mais Satisfeitos do Brasil</h1></div><br><br><br><br><br><br><br><br>
             <div class="row">
                 <div class="col-sm-12">
-                <div class="col-sm-4"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-                <div class="col-sm-4"> <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-                    <div class="col-sm-4"> <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                <div class="col-sm-4"><?php echo $paidesanto[0];//Comentários ?></div>
+                <div class="col-sm-4"><?php echo $paidesanto[1];//Comentários ?></div>
+                <div class="col-sm-4"><?php echo $paidesanto[2];//Comentários ?></div>
                 </div>
                 <div class="col-sm-12">
-                <div class="col-sm-6"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-                <div class="col-sm-6"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonicavicka%2Fposts%2F1253933174734031%3A0&width=500" width="500" height="355" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                <div class="col-sm-6"><?php echo $paidesanto[3];//Comentários ?></div>
+                <div class="col-sm-6"><?php echo $paidesanto[4];//Comentários ?></div>
                 </div>
             </div>
             
