@@ -62,7 +62,7 @@ elseif (isset($atualize)) {
         header("location: ../index.php");
     }
     //Aqui verifico se as senhas são identicas
-    elseif ($senha != $senha2) {
+    elseif ($senha !== $senha2) {
         $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
         header("location: ../verAdm.php");
         exit;
@@ -103,7 +103,7 @@ elseif (isset($atualize)) {
         header("location: ../index.php");
     }
     //Aqui verifico se as senhas são identicas
-    elseif ($senha != $senha2) {
+    elseif ($senha !== $senha2) {
         $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
         header("location: ../meusDados.php");
         exit;
