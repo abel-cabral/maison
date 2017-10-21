@@ -20,7 +20,6 @@ echo @$_SESSION['mensagemStatus'];
 unset($_SESSION['mensagemStatus']);
 
 // Chama o arquivo que pega as informações no banco
-
 include_once ("./php/verDados.php");
 
 ?>

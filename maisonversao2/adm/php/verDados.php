@@ -2,16 +2,14 @@
 
 // Chama as configuraÃ§Ãµes de conexÃ£o com o BD
 
-@include_once './config.php';
+include_once './php/config.php';
 
 // Busca os Adm cadastrados
 
 function exibirNomes()
 {
-	$PDO = conectar();
-
-	// Puxa e Exibir do Banco de Dados, se usarmos * seleciona tudo na tabela
-
+    // Puxa e Exibir do Banco de Dados, se usarmos * seleciona tudo na tabela
+    $PDO = conectar();
 	$sql_msg = "SELECT idgerente, login, adm FROM gerente ORDER BY idgerente ASC";
 
 	// Seleciona os Registro no BD e joga em Array
@@ -74,17 +72,22 @@ function perfil($go)
 {
 	@session_start();
 
-	// Pega a variavel de sessÃ£o
-
-	$idgerente = $_SESSION['user_id'];
-	$pdo = conectar();
+	// Pega a variavel de sessão
+    //Fazemos um text, se tiver get priorize-o se não use o id do usuario
+    if(isset($_GET['idgerente'])){
+       $idgerente = isset($_GET['idgerente']) ? (int) $_GET['idgerente'] : null; 
+    }else{
+	   $idgerente = $_SESSION['user_id'];
+    }
+    //Conectamos com o Banco
+    $pdo = conectar();
 	$sql_msg_contato = "SELECT idgerente, login, adm, senha FROM gerente WHERE idgerente='$idgerente'";
 	$result_msg_contato = $pdo->prepare($sql_msg_contato);
 	$result_msg_contato->bindParam(':idgerente', $idgerente, PDO::PARAM_INT);
 	$result_msg_contato->execute();
 	$resultado_msg_contato = $result_msg_contato->fetch(PDO::FETCH_ASSOC);
 	if (!is_array($resultado_msg_contato)) {
-		echo "Nenhum contato encontrado";
+		$_SESSION['mensagemStatus'] = "<script>alert('Não Encontrado no Banco de Dados');</script>";
 		exit;
 	}
 
