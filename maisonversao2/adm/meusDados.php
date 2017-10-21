@@ -1,46 +1,28 @@
 <?php
-//Cabeça do documento HTML
-@require_once("./php/header.php");
-//VErifica se o usuario esta logado
-@require_once("./php/session.php");
+
+// Cabeça do documento HTML
+
+@require_once ("./php/header.php");
+
+// Verifica se o usuario esta logado
+
+@require_once ("./php/session.php");
+
 $userdeslogado = userdeslogado();
 
-//chama as configurações com o banco de dados
-@require_once("./php/config.php");
+// chama as configurações com o banco de dados
 
-//MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
-    echo @$_SESSION['mensagemStatus'];
-    unset($_SESSION['mensagemStatus']);
+@require_once ("./php/config.php");
 
-//Com esse if apenas  id 29 maison podera fazer qualquel alteração/inclusao no banco
-/*if($_SESSION['user_id'] != 29){
-    $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";    
-    header ("location: ./index.php");     
-}*/
+// MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
 
+echo @$_SESSION['mensagemStatus'];
+unset($_SESSION['mensagemStatus']);
 
-  // pega o ID da URL
-$idgerente = $_SESSION['user_id'];
+// Chama o arquivo que pega as informações no banco
 
-//Valida a variavel da URL
-if (empty($idgerente)){
-	echo "Você precisa estar devidamente logado, para fazer esta ação";
-    exit;
-}
+include_once ("./php/verDados.php");
 
-$pdo = conectar();
-$sql_msg_contato = "SELECT idgerente, login, adm, senha FROM gerente WHERE idgerente='$idgerente'";
-$result_msg_contato = $pdo->prepare($sql_msg_contato);
-$result_msg_contato->bindParam(':idgerente', $idgerente, PDO::PARAM_INT);
-
-$result_msg_contato->execute();
-
-$resultado_msg_contato = $result_msg_contato->fetch(PDO::FETCH_ASSOC);
-
-if(!is_array($resultado_msg_contato)){
-	echo "Nenhum contato encontrado";
-    exit;	
-}
 ?>
 
 
@@ -56,29 +38,34 @@ if(!is_array($resultado_msg_contato)){
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <label for="exampleInputName">Login de Acesso</label>
-                                    <input class="form-control" name="login" type="text" aria-describedby="nameHelp" value="<?php echo $resultado_msg_contato['login'];?>" required>
+                                    <input class="form-control" name="login" type="text" aria-describedby="nameHelp" value="<?php
+echo perfil('login'); ?>" required>
                                 </div>
 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Administrador</label>
-                            <input class="form-control" name="adm" type="text" aria-describedby="emailHelp" value="<?php echo $resultado_msg_contato['adm'];?>" required>
+                            <input class="form-control" name="adm" type="text" aria-describedby="emailHelp" value="<?php
+echo perfil('adm'); ?>" required>
                         </div>
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <label for="exampleInputPassword1">Senha</label>
-                                    <input class="form-control" name="senha" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+                                    <input class="form-control" name="senha" type="password" value="<?php
+echo perfil('senha'); ?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleConfirmPassword">Confirmar Senha</label>
-                                    <input class="form-control" name="senha2" type="password" value="<?php echo $resultado_msg_contato['senha'];?>" required>
+                                    <input class="form-control" name="senha2" type="password" value="<?php
+echo perfil('senha'); ?>" required>
 
                                 </div>
                             </div>
                         </div>
-                        <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php echo $resultado_msg_contato['idgerente'];?>">
+                        <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php
+echo perfil('idgerente'); ?>">
                         <a>
                             <input class="btn btn-primary btn-block danger" name="atualizeSeu" type="submit" value="Atualizar">
                         </a>
