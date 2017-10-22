@@ -100,14 +100,14 @@ endwhile;
         <nav id="main-nav">
 
             <div class="full-wrapper relative">
-
+<div class="fb-like" data-href="https://www.facebook.com/maisonchic.salaodebeleza/" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
 
                 <div id="nav-menu-wrap">
                     <div id="nav-page-section">
                         <ul>
                             <li id="p"></li>
                             <li>
-                                <div class="fb-like" data-href="https://www.facebook.com/maisonchic.salaodebeleza/" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+                                
                             </li>
                             <li class=""><a href="#section1"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
                             <li><a href="#section2"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
@@ -117,11 +117,11 @@ endwhile;
                     <div class="separator-menu"></div>
 
                     <!-- [end #nav-section] -->
-                    <div id="nav-tools-section">
-                        <ul>
-                            <li><a href="#" class="register-btn-nav">Galeria de Destaque</a></li>
-                            <li><a href="#" class="register-btn-nav">Nosso Espaço</a></li>
-                            <li><a href="#" class="register-btn-nav">Enviar Mensagem</a></li>
+                    <div id="nav-page-section">
+                        <ul>                                                    
+                            <li class=""><a href="#section1"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
+                            <li><a href="#section2"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
+                            <li><a href="section3"><span class="glyphicon glyphicon-thumbs-up"></span> Seu Comentário</a></li>
                         </ul>
                     </div>
 
@@ -261,7 +261,8 @@ endwhile;
 
             <section id="cd-google-map">
                 <div id="google-container"></div>
-
+                <div id="cd-zoom-in"></div>
+                <div id="cd-zoom-out"></div>
                 <address>Shopping Rosa - R. João Caetano, 185 - Loja 102 - Alcantara, São Gonçalo - RJ, 24710-405</address>
             </section>
         </section>
@@ -277,8 +278,9 @@ endwhile;
                 <div class="col-sm-4"><?php echo $paidesanto[2];//Comentários ?></div>
                 </div>
                 <div class="col-sm-12">
-                <div class="col-sm-6"><?php echo $paidesanto[3];//Comentários ?></div>
-                <div class="col-sm-6"><?php echo $paidesanto[4];//Comentários ?></div>
+                <div class="col-sm-4"><?php echo $paidesanto[3];//Comentários ?></div>
+                <div class="col-sm-4"><?php echo $paidesanto[4];//Comentários ?></div>
+                <div class="col-sm-4"><?php echo $paidesanto[4];//Comentários ?></div>
                 </div>
             </div>
             
@@ -334,8 +336,8 @@ endwhile;
     </script>
 
     <!--Scripts-->
-    <!--Script do Google Maps-->
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <!--Script do Google Maps. Obs: Você precisará de sua chave do maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key= AIzaSyAVyoFLk6cR3g3S5ecg8jAR4a6pGFcHd4k "></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="./js/maps.js"></script>
     <!--JS do Efeito do Principal do Index-->
