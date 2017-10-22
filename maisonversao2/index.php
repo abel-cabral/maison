@@ -3,15 +3,14 @@
 //Local onde está a PDO que puxa do banco de dados
 //A variavel recebe o valor do return da function assim posso trabalhar tanto a tabela usuarios quanto a img
 //Fazemos um while para jogar as imagens num array e de lá puxamos por sua id.
-@require_once("./adm/php/verDados.php");
+@include_once("./adm/php/verDados.php");
 $exibirImg = exibirImg();
 $exibirQlf = qualifica();
 while($msg_login = $exibirImg->fetch(PDO::FETCH_ASSOC)):
     $maedesanto[] = $msg_login['url'];
    
 endwhile;
-while($msg_qlf = $exibirQlf->fetch(PDO::FETCH_ASSOC)):
-    
+while($msg_qlf = $exibirQlf->fetch(PDO::FETCH_ASSOC)):    
     $paidesanto[] = $msg_qlf['qlf'];
 endwhile;
 //Numero do Array começa a contar em 0, mas numero da linha na tabela começa em 1, então o arquivo no array 0 deve ter value 1:

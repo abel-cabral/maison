@@ -38,21 +38,8 @@ include_once ("./php/verDados.php");
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome do Administrador</label>
                             <input class="form-control" name="adm" type="text" aria-describedby="emailHelp" value="<?php echo perfil('adm');?>" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <label for="exampleInputPassword1">Senha</label>
-                                    <input class="form-control" id="senha" name="senha" type="password" value="<?php echo perfil('senha');?>" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="exampleConfirmPassword">Confirmar Senha</label>
-                                    <input class="form-control" name="senha2" type="password" value="<?php echo perfil('senha');?>" required>
-
-                                </div>
-                            </div>
-                        </div>
-                        <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php echo $resultado_msg_contato['idgerente'];?>">
+                        </div>                        
+                        <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php echo perfil('idgerente');?>">
                         <a>
                             <input class="btn btn-primary btn-block danger" name="atualize" type="submit" value="Atualizar">
                         </a>

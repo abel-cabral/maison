@@ -69,7 +69,7 @@ endwhile;
                         </div>
 
                         <div class="col-sm-4">
-                            <h2 class="text-center">Capa Vídeo Promocional</h2>
+                            <h2 class="text-center">Capa Promocional</h2>
                             <img class="img-responsive img-thumbnail" src="<?php echo $maedesanto[1]; ?>" alt="Chania" width="460" height="345">
                             <form class="form-horizontal" action="./php/insert.php" method="post">
                                 <fieldset>

@@ -1,8 +1,13 @@
 <?php
 
-// Chama as configuraÃ§Ãµes de conexÃ£o com o BD
+// Chama as configurações de conexãoo com o BD
+if((include_once './php/config.php') == TRUE){    
+}else{
+    include_once './adm/php/config.php';
+}
 
-include_once './php/config.php';
+
+
 
 // Busca os Adm cadastrados
 
@@ -22,8 +27,8 @@ function exibirNomes()
 // Pega as imagens no Banco
 
 function exibirImg()
-{
-	$PDO = conectar();
+{	
+    $PDO = conectar();
 
 	// Puxa e Exibir do Banco de Dados
 
@@ -81,7 +86,7 @@ function perfil($go)
     }
     //Conectamos com o Banco
     $pdo = conectar();
-	$sql_msg_contato = "SELECT idgerente, login, adm, senha FROM gerente WHERE idgerente='$idgerente'";
+	$sql_msg_contato = "SELECT idgerente, login, adm FROM gerente WHERE idgerente='$idgerente'";
 	$result_msg_contato = $pdo->prepare($sql_msg_contato);
 	$result_msg_contato->bindParam(':idgerente', $idgerente, PDO::PARAM_INT);
 	$result_msg_contato->execute();

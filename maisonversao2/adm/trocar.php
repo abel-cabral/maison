@@ -10,10 +10,6 @@
 
 $userdeslogado = userdeslogado();
 
-// chama as configurações com o banco de dados
-
-@require_once ("./php/config.php");
-
 // MENSAGENS AO USUARIO - O uso do @ serve para ocultar mensagem de aviso do PHP.
 
 echo @$_SESSION['mensagemStatus'];
@@ -29,34 +25,30 @@ include_once ("./php/verDados.php");
     <body class="bg-dark">
         <div class="container">
             <div class="card card-register mx-auto mt-5">
-                <div class="card-header">Editar Meus Dados</div>
+                <div class="card-header"><strong>Alterar Senha de Acesso</strong></div>
+                
                 <div class="card-body">
 
                     <form action="./php/insert.php" method="post">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <label for="exampleInputName">Login de Acesso</label>
-                                    <input class="form-control" name="login" type="text" aria-describedby="nameHelp" placeholder="<?php
-echo perfil('login'); ?>" required>
+                                    <label for="exampleInputName">Senha</label>
+                                    <input class="form-control" name="senha" type="password" aria-describedby="nameHelp" placeholder="Minha Senha" required>
                                 </div>
                                 <!--Botão de Trocar Senha-->
                                 <div class="col-md-6">
-                                    <label>Minha Senha</label><br>
-                                    <button onClick="parent.location='./trocar.php'" class="btn btn-danger btn-block">Mudar Senha</button>
+                                    <label for="exampleInputName">Confirmar Senha</label>
+                                    <input class="form-control" name="senha2" type="password" aria-describedby="nameHelp" placeholder="Minha Senha" required>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Nome do Administrador</label>
-                            <input class="form-control" name="adm" type="text" aria-describedby="emailHelp" placeholder="<?php
-echo perfil('adm'); ?>" required>
-                        </div>                       
+                                           
                         <input class="btn btn-primary btn-block" type="hidden" name="idgerente" value="<?php
 echo perfil('idgerente'); ?>">
                         <a>
-                            <input class="btn btn-primary btn-block danger" name="atualizeSeu" type="submit" value="Atualizar">
+                            <button class="btn btn-danger btn-block" name="atualizeSeu" type="submit">Atualizar Senha</button>
                         </a>
                     </form>
 

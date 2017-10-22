@@ -61,34 +61,26 @@ elseif (isset($atualize)) {
         $_SESSION['mensagemStatus'] = "<script>alert('Apenas o Administrador Maison pode efetuar essas alterações');</script>";
         header("location: ../index.php");
     }
-    //Aqui verifico se as senhas são identicas
-    elseif ($senha !== $senha2) {
-        $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
-        header("location: ../verAdm.php");
-        exit;
-    }
-    
-    else {
+        else {
         
         //Essa Variavel só existem em atualização ou exclusão.
         $idgerente = $_POST["idgerente"];
         
         //Com essa variavel informo o que quero buscar no banco de dados
-        $sql_msg_contatos   = "UPDATE gerente SET login = :login, adm = :adm, senha = :senha WHERE idgerente = :idgerente";
+        $sql_msg_contatos   = "UPDATE gerente SET login = :login, adm = :adm WHERE idgerente = :idgerente";
         //Aqui de fato eu conecto e verifico se elas existem
         $insert_msg_contato = $pdo->prepare($sql_msg_contatos);
         
         //Aqui eu mostro de que variavel vem as informações do php e para onde vao no sql
         $insert_msg_contato->bindParam(':login', $login);
-        $insert_msg_contato->bindParam(':adm', $adm);
-        $insert_msg_contato->bindParam(':senha', $senha);
+        $insert_msg_contato->bindParam(':adm', $adm);        
         $insert_msg_contato->bindParam(':idgerente', $idgerente, PDO::PARAM_INT);
         
         //basicamente aqui eu faço o ->execute() que de fato realiza a operação
         if ($insert_msg_contato->execute()) {
             
             $_SESSION['mensagemStatus'] = "<script>alert('Cadastro Atualizado');</script>";
-            header("Location: ../index.php");
+            header("Location: ../verAdm.php");
         } else {
             echo "Erro ao cadastrar";
             $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
@@ -105,7 +97,7 @@ elseif (isset($atualize)) {
     //Aqui verifico se as senhas são identicas
     elseif ($senha !== $senha2) {
         $_SESSION['mensagemStatus'] = "<script>alert('Senhas Divergentes');</script>";
-        header("location: ../meusDados.php");
+        header("location: ../trocar.php");
         exit;
     }
     
@@ -115,26 +107,36 @@ elseif (isset($atualize)) {
         $idgerente = $_POST["idgerente"];
         
         //Com essa variavel informo o que quero buscar no banco de dados
-        $sql_msg_contatos   = "UPDATE gerente SET login = :login, adm = :adm, senha = :senha WHERE idgerente = :idgerente";
+             
+        //Aqui estamos utilizando if/else para aproveitarmos a função para gravar tanto senha quanto nick
+        if(!empty($login)){
+        $sql_msg_contatos   = "UPDATE gerente SET login = :login, adm = :adm WHERE idgerente = :idgerente";
         //Aqui de fato eu conecto e verifico se elas existem
-        $insert_msg_contato = $pdo->prepare($sql_msg_contatos);
-        
+        $insert_msg_contato = $pdo->prepare($sql_msg_contatos);        
         //Aqui eu mostro de que variavel vem as informações do php e para onde vao no sql
         $insert_msg_contato->bindParam(':login', $login);
-        $insert_msg_contato->bindParam(':adm', $adm);
-        $insert_msg_contato->bindParam(':senha', $senha);
+        $insert_msg_contato->bindParam(':adm', $adm); 
+            
+        }else{
+            $sql_msg_contatos   = "UPDATE gerente SET senha = :senha WHERE idgerente = :idgerente";
+            //Aqui de fato eu conecto e verifico se elas existem
+            $insert_msg_contato = $pdo->prepare($sql_msg_contatos);   
+            $insert_msg_contato->bindParam(':senha', $senha);
+            
+            
+        }
         $insert_msg_contato->bindParam(':idgerente', $idgerente, PDO::PARAM_INT);
         
         //basicamente aqui eu faço o ->execute() que de fato realiza a operação
         if ($insert_msg_contato->execute()) {
             
-            $_SESSION['mensagemStatus'] = "<script>alert('Cadastro Atualizado');</script>";
+            $_SESSION['mensagemStatus'] = "<script>alert('Dados Atualizados');</script>";
             header("Location: ../index.php");
         } else {
             echo "Erro ao cadastrar";
             $_SESSION['mensagemStatus'] = "Opa! Houve algum erro, tente de novo.";
             header("Location: ../register.php");
-        }
+        } 
     }
 }
 //------------------------------------------------------------------------------------------    
@@ -254,4 +256,4 @@ elseif (isset($atualize)) {
     }
 }
 
-?> 
+?>
