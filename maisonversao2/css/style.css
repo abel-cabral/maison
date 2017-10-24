@@ -111,8 +111,8 @@ COMMON ELEMENTS
     color: rgba(255, 255, 255, 0.84);
 }
 #nav-page-section ul li a:hover {
-    border-top: 4px solid #00ACD4;
-    color: #fff;
+    border-top: 4px solid #365899;
+    color: #a81908e6;
     text-transform: uppercase;
     padding-top: 20px;
 }
@@ -386,9 +386,9 @@ a.register-btn-nav:hover {
 }
 #title h2 {
     color: #fff;
-    font-size: 12vmin;
+    font-size: 7vmin;
     font-family: "museo-slab";
-    font-weight: 600;
+    font-weight: 500;
     line-height: 50px;
 }
 #title h2 > span {
@@ -470,7 +470,7 @@ i.fa-chevron-down {
     display: block;
     position: relative;
     box-sizing: border-box;
-    padding: 80px 0;
+    padding: 40px 0;
 }
 .bkg-white {
     background-color: #fff;
@@ -734,5 +734,14 @@ section.video-promo-hero .video-promo-play-button {
 
 /*TAMANHO DE TEXTOS*/
 #brasil{
-    font-size: 5rem!important;
+    font-size: 2rem!important;
+}
+hr{
+    color:rebeccapurple!important;
+}
+
+/*Facebook Ico*/
+#face {
+    position: absolute;
+    margin-top: -10px;
 }

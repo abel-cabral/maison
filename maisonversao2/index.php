@@ -6,12 +6,16 @@
 @include_once("./adm/php/verDados.php");
 $exibirImg = exibirImg();
 $exibirQlf = qualifica();
+$exibirTxt = exibirTxt();
 while($msg_login = $exibirImg->fetch(PDO::FETCH_ASSOC)):
     $maedesanto[] = $msg_login['url'];
    
 endwhile;
 while($msg_qlf = $exibirQlf->fetch(PDO::FETCH_ASSOC)):    
     $paidesanto[] = $msg_qlf['qlf'];
+endwhile;
+while($msg_txt = $exibirTxt->fetch(PDO::FETCH_ASSOC)):    
+    $filhodesanto[] = $msg_txt['txt'];
 endwhile;
 //Numero do Array começa a contar em 0, mas numero da linha na tabela começa em 1, então o arquivo no array 0 deve ter value 1:
 ?>
@@ -100,28 +104,27 @@ endwhile;
         <nav id="main-nav">
 
             <div class="full-wrapper relative">
-<div class="fb-like" data-href="https://www.facebook.com/maisonchic.salaodebeleza/" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/maisonchic.salaodebeleza/" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="false"></div>
 
                 <div id="nav-menu-wrap">
                     <div id="nav-page-section">
                         <ul>
                             <li id="p"></li>
                             <li>
-                                
+
                             </li>
                             <li class=""><a href="#section1"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
                             <li><a href="#section2"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
-                            <li><a href="section3"><span class="glyphicon glyphicon-thumbs-up"></span> Seu Comentário</a></li>
+                            <li><a href="#section3"><span class="glyphicon glyphicon-thumbs-up"></span> Avaliações</a></li>
                         </ul>
                     </div>
                     <div class="separator-menu"></div>
 
                     <!-- [end #nav-section] -->
                     <div id="nav-page-section">
-                        <ul>                                                    
-                            <li class=""><a href="#section1"><span class="glyphicon glyphicon-scissors"></span> Nossa História</a></li>
-                            <li><a href="#section2"><span class="glyphicon glyphicon-globe"></span> Onde Estamos ?</a></li>
-                            <li><a href="section3"><span class="glyphicon glyphicon-thumbs-up"></span> Seu Comentário</a></li>
+                        <ul>
+                            <li class=""><a href="#"> <strong>Galeria</strong></a></li>                            
+                            <li><a href="#"><strong>Recados</strong></a></li>
                         </ul>
                     </div>
 
@@ -138,12 +141,11 @@ endwhile;
                 <div class="overlay" id="overlay">
                     <nav class="overlay-menu">
                         <ul>
-                            <li><a href="#">Nossa História</a></li>
-                            <li><a href="#">Onde Estamos?</a></li>
-                            <li><a href="#">Seu Comentário</a></li>
-                            <li><a href="#">Galeria de Destaque</a></li>
-                            <li><a href="#">Nosso Espaço</a></li>
-                            <li><a href="#">Enviar Mensagem</a></li>
+                            <li><a href="#section1">Nossa História</a></li>
+                            <li><a href="#section2">Onde Estamos?</a></li>
+                            <li><a href="#section3">Avaliações</a></li>
+                            <li><a href="#">Galeria</a></li>
+                            <li><a href="#">Recados</a></li>                            
                         </ul>
                     </nav>
                 </div>
@@ -183,15 +185,15 @@ endwhile;
                                 <span style='display: none; color: #34a853'>ELEGÂNCIA</span>
                             </h2>
 
-                            <h3>Você merece muito, você merece Maison Chic</h3>
+                            <h3><?php echo $filhodesanto[0]; ?></h3>
 
                         </div>
                         <!-- [end #title] -->
 
                         <div class="local-scroll">
                             <a data-scroll href="#about" class="scroll-down">
-                                <i class="fa fa-chevron-down"></i>
-                            </a>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
                         </div>
                         <!-- [end #local-scroll] -->
                     </div>
@@ -205,9 +207,14 @@ endwhile;
 
 
         <section class="page-section animated bkg-white" id="section1">
-            <div class="container">
+            <div class="container">                
+                <h1 id="brasil">Um Pouco Sobre Nós</h1><hr><br>
                 <div class="intro-body">
-                    <h2 class=""><strong>Há Mais de 20 Anos Cuidando da Cabeça das Pessoas, Com a Máxima Dedicação. Assista Nossa História</strong></h2>
+                    
+                    <h2 align="left"><p><?php echo $filhodesanto[1]; ?></p>
+
+                        
+                    </h2>
 
                     <!-------------------VIDEO PROMOCIONAL------------------------------->
                     <section class="video-promo-hero">
@@ -224,7 +231,7 @@ endwhile;
                             </div>
                         </div>
                     </section>
-                    <!-------------------FIM DO VIDEO PROMOCIONAL------------------------------->                    
+                    <!-------------------FIM DO VIDEO PROMOCIONAL------------------------------->
                 </div>
 
             </div>
@@ -234,27 +241,29 @@ endwhile;
         <!-- [end .page-section] -->
 
         <section class="page-section animated bkg-white" id="about">
-            
+
             <div class="container">
                 <div class="intro-body">
-                    <h2><p>"Me sinto muito realizada, quando vejo uma noiva saindo com tudo que eu tive a capacidade de escolher para atender ao bom gosto dela. Qualidade, equipe e treinamento focando sempre no cliente"</p></h2>
-                <div class="row" align="center" id="projeto">
-                    
+                    <h2>
+                        <p>"<?php echo $filhodesanto[2];//2=Fundadora ?>"</p>
+                    </h2>
+                    <div class="row" align="center" id="projeto">
 
-                    <a href="#revele" data-toggle="collapse">
+
+                        <a href="#revele" data-toggle="collapse">
                         <img src="<?php echo $maedesanto[2];//2=Fundadora ?>" class="img-circle person" alt="noiva" width="250" height="250">
                     </a>
-                    <br>
-                    <br>
-                    <h3>"Jo Rigon - Fundadora"</h3>
+                        <br>
+                        <br>
+                        <h3>"Jo Rigon - Fundadora"</h3>
 
+                    </div>
                 </div>
-</div>
             </div>
         </section>
 
         <!------------------------------AQUI ENTRA O MAPA--------------------------->
-        <section>
+        <section id="section2">
             <header>
                 <h1>Onde Estamos Localizados?</h1>
             </header>
@@ -268,30 +277,51 @@ endwhile;
         </section>
         <!------------------------------FIM DO MAPA--------------------------->
 
-        <hr><br>
-        <section class="container-fluid text-center">            
-                <div class="col-sm-12"><h1 id="brasil">Seja Um Dos Clientes Mais Satisfeitos do Brasil</h1></div><br><br><br><br><br><br><br><br>
+        <hr>
+        <br>
+        <section class="container-fluid text-center" id="section3">
+            <div class="col-sm-12">
+                <h1 id="brasil"><?php echo $filhodesanto[3];//2=Fundadora ?>. Confira mais <a href="https://www.facebook.com/maisonchic.salaodebeleza/"><img id="face" src="./img/facebook.png" width="100"></a></h1>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="row">
                 <div class="col-sm-12">
-                <div class="col-sm-4"><?php echo $paidesanto[0];//Comentários ?></div>
-                <div class="col-sm-4"><?php echo $paidesanto[1];//Comentários ?></div>
-                <div class="col-sm-4"><?php echo $paidesanto[2];//Comentários ?></div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5">
+                        <?php echo $paidesanto[0];//Comentários ?>
+                    </div>
+                    <div class="col-sm-5">
+                        <?php echo $paidesanto[1];//Comentários ?>
+                    </div>              
+                    <div class="col-sm-1"></div>
                 </div>
                 <div class="col-sm-12">
-                <div class="col-sm-4"><?php echo $paidesanto[3];//Comentários ?></div>
-                <div class="col-sm-4"><?php echo $paidesanto[4];//Comentários ?></div>
-                <div class="col-sm-4"><?php echo $paidesanto[4];//Comentários ?></div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5">
+                        <?php echo $paidesanto[2];//Comentários ?>
+                    </div>
+                    <div class="col-sm-5">
+                        <?php echo $paidesanto[3];//Comentários ?>
+                    </div>              
+                    <div class="col-sm-1"></div>
                 </div>
             </div>
-            
-            
-           
-            
+
+
+
+
         </section>
 
 
         <!------------------------------AQUI ENTRA OS COMENTARIOS--------------------------->
-        <section class="page-section animated bkg-gray" id="section2">
+        <section class="page-section animated bkg-gray">
             <div class="container">
 
                 <div class="process-body">
@@ -305,7 +335,7 @@ endwhile;
 
         <!-- AQUI ENTRA O FOOTER -->
 
-        
+
     </div>
     <!-- [end page] -->
 

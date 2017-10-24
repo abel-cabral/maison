@@ -27,8 +27,8 @@ Main components
 
 -------------------------------- */
 header {
-  height: 200px;
-  line-height: 200px;
+  height: 200px!important;
+  line-height: 200px!important;
   text-align: center;
   background: #2d313f;
 }

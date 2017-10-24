@@ -33,7 +33,7 @@ endwhile;
                     <!-- Breadcrumbs-->
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.php">Dashboard</a>
+                            <a href="index.php">Visão Geral</a>
                         </li>
                         <li class="breadcrumb-item active">MaisonChic.com.br - Atualização de Textos</li>
                     </ol>
@@ -46,7 +46,7 @@ endwhile;
 
                                 <!-- Textarea -->
                                 <div class="form-group">
-                                    <label class="col-md-12 control-label" for="textarea"></label>
+                                    <label class="col-md-12 control-label" for="textarea"><h4>Slogan</h4></label>
                                     <div class="col-md-12">
                                         <textarea class="form-control col-md-10 " name="txt" rows="8"><?php echo ucwords($maedesanto[0]); ?></textarea>
                                     </div>
@@ -71,7 +71,7 @@ endwhile;
 
                                 <!-- Textarea -->
                                 <div class="form-group">
-                                    <label class="col-md-12 control-label" for="textarea"></label>
+                                    <label class="col-md-12 control-label" for="textarea"><h4>Introdução</h4></label>
                                     <div class="col-md-12">
                                         <textarea class="form-control col-md-10 " name="txt" rows="8"><?php echo ucwords($maedesanto[1]); ?></textarea>
                                     </div>
@@ -96,7 +96,7 @@ endwhile;
 
                                 <!-- Textarea -->
                                 <div class="form-group">
-                                    <label class="col-md-12 control-label" for="textarea"></label>
+                                    <label class="col-md-12 control-label" for="textarea"><h4>Citação Criadora</h4></label>
                                     <div class="col-md-12">
                                         <textarea class="form-control col-md-10 " name="txt" rows="8"><?php echo ucwords($maedesanto[2]); ?></textarea>
                                     </div>
@@ -121,7 +121,7 @@ endwhile;
 
                                 <!-- Textarea -->
                                 <div class="form-group">
-                                    <label class="col-md-12 control-label" for="textarea"></label>
+                                    <label class="col-md-12 control-label" for="textarea"><h4>Facebook</h4></label>
                                     <div class="col-md-12">
                                         <textarea class="form-control col-md-10 " name="txt" rows="8"><?php echo ucwords($maedesanto[3]); ?></textarea>
                                     </div>
@@ -146,7 +146,7 @@ endwhile;
 
                                 <!-- Textarea -->
                                 <div class="form-group">
-                                    <label class="col-md-12 control-label" for="textarea"></label>
+                                    <label class="col-md-12 control-label" for="textarea"><h4>Capa Álbum</h4></label>
                                     <div class="col-md-12">
                                         <textarea class="form-control col-md-10 " name="txt" rows="8"><?php echo ucwords($maedesanto[4]); ?></textarea>
                                     </div>
@@ -171,7 +171,7 @@ endwhile;
 
                                 <!-- Textarea -->
                                 <div class="form-group">
-                                    <label class="col-md-12 control-label" for="textarea"></label>
+                                    <label class="col-md-12 control-label" for="textarea"><h4>Aviso!!</h4></label>
                                     <div class="col-md-12">
                                         <textarea class="form-control col-md-10 " name="txt" rows="8"><?php echo ucwords($maedesanto[5]); ?></textarea>
                                     </div>
@@ -206,7 +206,7 @@ endwhile;
                 <footer class="sticky-footer">
                     <div class="container">
                         <div class="text-center">
-                            <small>Copyright © Your Website 2017</small>
+                            <small>Desenvolvido por <a href="http://www.github.com/abel-cabral">Abel</a></small>
                         </div>
                     </div>
                 </footer>

@@ -16,7 +16,7 @@ $userdeslogado = userdeslogado();
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="index.php">Dashboard</a>
+                    <a href="index.php">Visão Geral</a>
                 </li>
                 <li class="breadcrumb-item active">Blank Page</li>
             </ol>
@@ -32,7 +32,7 @@ $userdeslogado = userdeslogado();
         <footer class="sticky-footer">
             <div class="container">
                 <div class="text-center">
-                    <small>Copyright © Your Website 2017</small>
+                    <small>Desenvolvido por <a href="http://www.github.com/abel-cabral">Abel</a></small>
                 </div>
             </div>
         </footer>

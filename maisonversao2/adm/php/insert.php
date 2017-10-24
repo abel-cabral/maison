@@ -205,9 +205,9 @@ elseif (isset($atualize)) {
 }
 //------------------------------------------------------------------------------------------
     elseif (isset($atualizeTxt)) {
-    //Essas Variaveis aqui recebem o URL e ID das imagens
+    //Essas Variaveis aqui recebem o URL e ID dos textos
     $idtxt = $_POST['idtxt'];
-    $txt   = $_POST['txt'];
+    $txt   = ucfirst($_POST['txt']);
     
     //Com essa variavel informo o que quero buscar no banco de dados
     $sql_msg_contatos   = "UPDATE txt SET txt = :txt WHERE idtxt = :idtxt";
